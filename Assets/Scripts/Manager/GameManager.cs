@@ -12,13 +12,13 @@ public class GameManager : MonoBehaviour
         {
             if (_instance == null)
             {
-                _instance = FindObjectOfType<T>();
+                _instance = FindObjectOfType<GameManager>();
 
                 if (_instance == null)
                 {
                     GameObject obj = new GameObject();
-                    obj.name = typeof(T).Name;
-                    _instance = obj.AddComponent<T>();
+                    obj.name = typeof(GameManager).Name;
+                    _instance = obj.AddComponent<GameManager>();
                 }
             }
 
