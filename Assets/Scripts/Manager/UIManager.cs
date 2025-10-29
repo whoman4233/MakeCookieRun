@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
         ChangeState(UIState.GameOver);
     }
 
-    private void ChangeState(UIState state)
+    public void ChangeState(UIState state)
     {
         currentState = state;
         playUI.SetActive(currentState);

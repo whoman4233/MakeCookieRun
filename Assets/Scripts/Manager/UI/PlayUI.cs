@@ -20,7 +20,7 @@ public class PlayUI : BaseUI
     {
         UpdateHPSlider(1);
     }
-    public void OnClikPauseBtn()
+    public void OnClickPauseBtn()
     {
         Time.timeScale = 1.0f;
         uiManager.ChangeState(UIState.Pause);
