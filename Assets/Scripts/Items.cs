@@ -60,16 +60,15 @@ public class Items : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player player = collision.GetComponent<Player>();
-        if (player == null) return;
+        if (GameManager.Instance == null) return;
         
         if (collision.gameObject.name.Contains("Score"))
        {
-           player.Score += 100;
+           GameManager.Instance.Score += 100;
        }
        else if (collision.gameObject.name.Contains("Hp"))
        {
-           player.Hp += 10;
+           GameManager.Instance.PlayerHP += 10;
        }
        
        Destroy(collision.gameObject);
