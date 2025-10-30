@@ -40,22 +40,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        // 오른쪽 클릭 = 점프
-        if (Input.GetMouseButtonDown(1))
-        {
-            TryJump();
-        }
-
-        // 왼쪽 클릭: 누르는 동안만 슬라이드(콜라이더 축소)
-        if (Input.GetMouseButtonDown(0))
-            BeginSlide();
-
-        if (Input.GetMouseButtonUp(0))
-            EndSlide();
-    }
-
     void FixedUpdate()
     {
         // 항상 앞으로 이동
@@ -69,7 +53,7 @@ public class Player : MonoBehaviour
             canDoubleJump = true;
     }
 
-    private void TryJump()
+    public void TryJump()
     {
         if (isGrounded)
         {
@@ -85,7 +69,7 @@ public class Player : MonoBehaviour
     }
 
     // ----- 슬라이드 시작: 콜라이더 높이만 줄이고, 발 위치 유지 -----
-    private void BeginSlide()
+    public void BeginSlide()
     {
         if (boxCol == null || isSliding) return;
 
@@ -98,7 +82,7 @@ public class Player : MonoBehaviour
     }
 
     // ----- 슬라이드 종료: 원래 사이즈/오프셋 복원 -----
-    private void EndSlide()
+    public void EndSlide()
     {
         if (boxCol == null || !isSliding) return;
 
