@@ -23,7 +23,7 @@ public class GameOverUI : BaseUI
 
     public void OnClickTotitleBtn()
     {
-        //SceneManager.LoadScene(TitleScene.SceneName);
+        SceneManager.LoadScene("TitleScene");
     }
 
     protected override UIState GetUIState()

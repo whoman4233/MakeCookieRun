@@ -8,14 +8,14 @@ using UnityEngine.XR;
 public class PauseUI : BaseUI
 {
     [SerializeField] private Button restartBtn;
-    [SerializeField] private Button replayBtn;
+    [SerializeField] private Button resumeBtn;
     [SerializeField] private Button quitBtn;
 
     public override void Init(UIManager uiManager)
     {
         base.Init(uiManager);
         restartBtn.onClick.AddListener(OnClikRestartBtn);
-        replayBtn.onClick.AddListener(OnClikReplayBtn);
+        resumeBtn.onClick.AddListener(OnClikResumeBtn);
         quitBtn.onClick.AddListener(OnClickQuitBtn);
     }
 
@@ -24,15 +24,14 @@ public class PauseUI : BaseUI
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void OnClikReplayBtn()
+    public void OnClikResumeBtn()
     {
-        Time.timeScale = 1.0f;
-        uiManager.ChangeState(UIState.Play);
+        uiManager.setPlay();
     }
 
     public void OnClickQuitBtn()
     {
-        //SceneManager.LoadScene(TitleScene.SceneName);
+        SceneManager.LoadScene("TitleScene");
     }
 
     protected override UIState GetUIState()
