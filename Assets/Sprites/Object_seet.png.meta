@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 707da8ff2c3100a4f9f4ef5610baf9c0
+guid: 97fac6cd15c7b354796932cf86134dd8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_1
+      name: BackGround_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1224
-        width: 249
-        height: 249
+        x: 0
+        y: 1807
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d86cb9d775b8ad442b00ee49f0538a22
-      internalID: -1261803701
+      spriteID: ea6bea5768f32bf419ee2ce239b2b110
+      internalID: 167433630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: Ground
       rect:
         serializedVersion: 2
-        x: 285
-        y: 1224
-        width: 249
-        height: 249
+        x: 0
+        y: 1562
+        width: 1920
+        height: 221
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cabdc943ad8921f408f41058be4594ba
-      internalID: -1466071747
+      spriteID: e6a10f353eeae63408aada79940aedfd
+      internalID: 819480308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_1
+      name: BackGroud_2
       rect:
         serializedVersion: 2
-        x: 20
-        y: 958
-        width: 249
-        height: 249
+        x: 0
+        y: 1176
+        width: 1920
+        height: 366
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea4a44d764ff3a3498887d41679ef98a
-      internalID: -1035226893
+      spriteID: 9ffa625c337f8634890eb02601acb2e4
+      internalID: 918553054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_2
+      name: Endpanel
       rect:
         serializedVersion: 2
-        x: 285
-        y: 958
-        width: 249
-        height: 249
+        x: 1952
+        y: 1888
+        width: 1487
+        height: 950
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ef7a228f4ddf3245b974e27818f5833
-      internalID: 227523086
+      spriteID: 7ffb60eb67b288e4faf358df5f1ed761
+      internalID: 848361995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_3
+      name: Back_Button
       rect:
         serializedVersion: 2
-        x: 548
-        y: 958
-        width: 249
-        height: 249
+        x: 1958
+        y: 1551
+        width: 558
+        height: 303
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da5b29785726d4346b0fa2af408ef5be
-      internalID: 1619200118
+      spriteID: 9185682c462567a4fbc47c95822fba45
+      internalID: -1546448190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_1
+      name: Retry_Button
       rect:
         serializedVersion: 2
-        x: 20
-        y: 694
-        width: 249
-        height: 249
+        x: 1958
+        y: 1233
+        width: 558
+        height: 303
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff85f2c731c41d146a1fd24fc1ef8115
-      internalID: -6298478
+      spriteID: 141d59701a699c1478c8a3f3d82f3795
+      internalID: -2146944590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_2
+      name: Button_0
       rect:
         serializedVersion: 2
-        x: 285
-        y: 694
-        width: 249
-        height: 249
+        x: 2569
+        y: 1629
+        width: 322
+        height: 232
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14cf45c939097d647a9dc83f0df82d19
-      internalID: 1673220541
+      spriteID: 083984bbc31304949b02323b6baa70a2
+      internalID: -221851769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slide_1
+      name: Button_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 428
-        width: 249
-        height: 249
+        x: 2569
+        y: 1380
+        width: 322
+        height: 232
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3201997dc97a0554f85fa51f90889eac
-      internalID: -1727888935
+      spriteID: 435d49e09f30d49429fa71e66954bed4
+      internalID: -467275847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slide_2
+      name: Setting
       rect:
         serializedVersion: 2
-        x: 285
-        y: 428
-        width: 249
-        height: 249
+        x: 2573
+        y: 1190
+        width: 158
+        height: 157
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e27889884be01b4f8712a928c645325
-      internalID: 506584723
+      spriteID: 53561f6bbaa47bf499bf565b36b2af1a
+      internalID: 297031468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slide_3
+      name: Hpbar
       rect:
         serializedVersion: 2
-        x: 548
-        y: 428
-        width: 249
-        height: 249
+        x: 2250
+        y: 1006
+        width: 1402
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 465d5e792ba739446b88729e7c6c6d18
-      internalID: 1732525887
+      spriteID: b5f0fbf7532557a4aa22dc164d003af5
+      internalID: 1180497724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Die_1
+      name: Hpgauge
       rect:
         serializedVersion: 2
-        x: 20
-        y: 161
-        width: 249
-        height: 249
+        x: 2498
+        y: 881
+        width: 1133
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba9467b4487ca074bb3e761c7b716650
-      internalID: 227465523
+      spriteID: c17fdf7cda127c64088933cc1380b088
+      internalID: 1017461720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Die_2
+      name: Opstacle_1
       rect:
         serializedVersion: 2
-        x: 285
-        y: 161
-        width: 249
-        height: 249
+        x: 2015
+        y: 245
+        width: 188
+        height: 894
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8daf577c393dab46a96f0611bb9ed26
-      internalID: -755419649
+      spriteID: 0ac38acdb21d1a343af896c6f56bba06
+      internalID: -693688861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Die_3
+      name: Opstacle_2
       rect:
         serializedVersion: 2
-        x: 548
-        y: 161
-        width: 249
-        height: 249
+        x: 1726
+        y: 246
+        width: 188
+        height: 892
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,20 +376,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63ae7f6ca8a789c4ca579c268f333fa3
-      internalID: 452282768
+      spriteID: 17a1c0188e37b804fba1a0329e060752
+      internalID: -1155446785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Die_4
+      name: Opstacle_3
       rect:
         serializedVersion: 2
-        x: 813
-        y: 161
-        width: 249
-        height: 249
+        x: 1380
+        y: 247
+        width: 283
+        height: 591
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,8 +397,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cc5faf0cd735d444a9202e716e70c0f
-      internalID: 275705540
+      spriteID: 94d68ed17c1e8ae4087375ed1e0a0762
+      internalID: 821790371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Opstacle_4
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 246
+        width: 278
+        height: 583
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3645c94a9d88e2243a2e7066bf0b4eea
+      internalID: 1120578650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Opstacle_5
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 246
+        width: 201
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89d5e2087d4b104c8edd5f30e3dac27
+      internalID: 1759089752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Opstacle_6
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 247
+        width: 277
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5086670299b56af44b486a93d28d3dcd
+      internalID: -1793819535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 276
+        width: 150
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4434793b2ab2ee540b7283087e3514e2
+      internalID: -1716379535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealItem
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 287
+        width: 174
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1a262b34fc91444803681d687d9705
+      internalID: -855147061
       vertices: []
       indices: 
       edges: []
@@ -414,20 +519,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Die_1: 227465523
-      Die_2: -755419649
-      Die_3: 452282768
-      Die_4: 275705540
-      Idle_1: -1261803701
-      Idle_2: -1466071747
-      Jump_1: -6298478
-      Jump_2: 1673220541
-      Run_1: -1035226893
-      Run_2: 227523086
-      Run_3: 1619200118
-      Slide_1: -1727888935
-      Slide_2: 506584723
-      Slide_3: 1732525887
+      BackGroud_2: 918553054
+      BackGround_1: 167433630
+      Back_Button: -1546448190
+      Button_0: -221851769
+      Button_1: -467275847
+      Coin: -1716379535
+      Endpanel: 848361995
+      Ground: 819480308
+      HealItem: -855147061
+      Hpbar: 1180497724
+      Hpgauge: 1017461720
+      Opstacle_1: -693688861
+      Opstacle_2: -1155446785
+      Opstacle_3: 821790371
+      Opstacle_4: 1120578650
+      Opstacle_5: 1759089752
+      Opstacle_6: -1793819535
+      Retry_Button: -2146944590
+      Setting: 297031468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
