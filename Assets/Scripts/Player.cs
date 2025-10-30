@@ -17,15 +17,12 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        if (rb == null) Debug.LogError("Rigidbody2D not found");
-
         rb.freezeRotation = true;
     }
 
     void Update()
     {
-        // 오른쪽 클릭 = 점프
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)) // 오른쪽 클릭
         {
             TryJump();
         }
@@ -33,13 +30,10 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 항상 앞으로 이동
         rb.velocity = new Vector2(forwardSpeed, rb.velocity.y);
 
-        // GroundCheck 없이 y속도로 착지 판정
         isGrounded = Mathf.Abs(rb.velocity.y) < 0.05f;
 
-        // 땅이면 다시 2단점프 가능
         if (isGrounded)
             canDoubleJump = true;
     }
