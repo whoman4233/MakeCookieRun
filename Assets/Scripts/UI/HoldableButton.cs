@@ -10,13 +10,11 @@ public class HoldableButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("Btn Pressed");
         onPress?.Invoke();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("Btn Released");
         onRelease?.Invoke();
     }
 }

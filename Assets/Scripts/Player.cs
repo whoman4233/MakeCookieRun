@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     private Vector2 boxOffsetOrig;          // 원래 오프셋
     private bool isSliding = false;         // 현재 슬라이드 중?
 
+    private Animator playerAnim;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +40,8 @@ public class Player : MonoBehaviour
         {
             Debug.LogWarning("BoxCollider2D가 없습니다. 슬라이드(콜라이더 축소)는 동작하지 않습니다.");
         }
+
+        playerAnim = GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
@@ -50,18 +54,22 @@ public class Player : MonoBehaviour
 
         // 땅이면 2단 점프 가능 리셋
         if (isGrounded)
+            playerAnim.SetBool("isGrounded", true);
             canDoubleJump = true;
+            playerAnim.SetBool("CanDoubleJump", true);
     }
 
     public void TryJump()
     {
         if (isGrounded)
         {
+            playerAnim.SetBool("isGrounded", false);
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         else if (canDoubleJump)
         {
+            playerAnim.SetBool("CanDoubleJump", false);
             canDoubleJump = false;
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.AddForce(Vector2.up * doubleJumpForce, ForceMode2D.Impulse);
@@ -74,6 +82,8 @@ public class Player : MonoBehaviour
         if (boxCol == null || isSliding) return;
 
         isSliding = true;
+        playerAnim.SetBool("OnSlide", true);
+
 
         float newH = boxSizeOrig.y * slideHeightScale;                 // 줄인 높이
         boxCol.size = new Vector2(boxSizeOrig.x, newH);                // 높이 축소
@@ -86,6 +96,7 @@ public class Player : MonoBehaviour
     {
         if (boxCol == null || !isSliding) return;
 
+        playerAnim.SetBool("OnSlide", false);
         boxCol.size = boxSizeOrig;
         boxCol.offset = boxOffsetOrig;
         isSliding = false;
