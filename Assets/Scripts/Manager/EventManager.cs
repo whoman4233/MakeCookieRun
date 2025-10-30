@@ -7,12 +7,19 @@ namespace Assets.Scripts.Manager
 {
     public static class EventManager
     {
+        public static event Action<UIState> OnUIStateChangeRequested;
+
         public static event Action<string> OnSfxPlayRequested;
 
         public static event Action<string> OnBgmPlayRequested;
         public static event Action OnBgmStopRequested;
         public static event Action OnBgmPauseRequested;
         public static event Action OnBgmResumeRequested;
+
+        public static void RequestUIStateChange(UIState state)
+        {
+            OnUIStateChangeRequested?.Invoke(state);
+        }
 
         public static void RequestSfxPlay(string soundName)
         {
@@ -39,6 +46,5 @@ namespace Assets.Scripts.Manager
             OnBgmResumeRequested?.Invoke();
         }
 
-       
     }
 }

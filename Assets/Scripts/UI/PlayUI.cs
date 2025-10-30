@@ -22,7 +22,7 @@ public class PlayUI : BaseUI
     }
     public void OnClickPauseBtn()
     {
-        uiManager.setPause();
+        GameManager.Instance.PauseGame();
     }
 
     public void UpdateHPSlider(float percentage)

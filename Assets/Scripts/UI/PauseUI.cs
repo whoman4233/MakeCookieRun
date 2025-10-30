@@ -14,19 +14,19 @@ public class PauseUI : BaseUI
     public override void Init(UIManager uiManager)
     {
         base.Init(uiManager);
-        restartBtn.onClick.AddListener(OnClikRestartBtn);
-        resumeBtn.onClick.AddListener(OnClikResumeBtn);
+        restartBtn.onClick.AddListener(OnClickRestartBtn);
+        resumeBtn.onClick.AddListener(OnClickResumeBtn);
         quitBtn.onClick.AddListener(OnClickQuitBtn);
     }
 
-    public void OnClikRestartBtn()
+    public void OnClickRestartBtn()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void OnClikResumeBtn()
+    public void OnClickResumeBtn()
     {
-        uiManager.setPlay();
+        GameManager.Instance.ResumeGame();
     }
 
     public void OnClickQuitBtn()
