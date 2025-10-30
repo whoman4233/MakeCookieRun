@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 7396e4cdea3614cb6977a8f7836fc311
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _scoreItemPrefabs: {fileID: 8570502538459170503, guid: f4776e22d0c544a959764ef796342cf7, type: 3}
+  - _hpItemPrefabs: {fileID: 5100781178660270297, guid: d593e95c2ff7746d0b549c0ce30064e4, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
