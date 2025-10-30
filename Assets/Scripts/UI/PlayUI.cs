@@ -22,8 +22,7 @@ public class PlayUI : BaseUI
     }
     public void OnClickPauseBtn()
     {
-        Time.timeScale = 1.0f;
-        uiManager.ChangeState(UIState.Pause);
+        GameManager.Instance.PauseGame();
     }
 
     public void UpdateHPSlider(float percentage)

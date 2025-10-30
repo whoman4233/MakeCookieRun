@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Assets.Scripts.Manager;
 
 public enum UIState
 {
@@ -23,7 +24,6 @@ public class UIManager : MonoBehaviour
     PlayUI playUI;
     PauseUI pauseUI;
     GameOverUI gameOverUI;
-    private UIState currentState;
 
     private void Awake()
     {
@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
             gameOverUI = GetComponentInChildren<GameOverUI>(true);
             gameOverUI.Init(this);
 
-            ChangeState(UIState.Title); // UIManager 시작 시 기본 UI 상태 설정
+            EventManager.OnUIStateChangeRequested += ChangeState; 
         }
         else
         {
@@ -51,34 +51,19 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void setPlay()
+    private void OnDisable()
     {
-        ChangeState(UIState.Play);
-        Time.timeScale = 1f;
-    }
-
-    public void setPause()
-    {
-        Time.timeScale = 0f; // 게임 일시 정지
-        ChangeState(UIState.Pause);
-    }
-
-    public void setGameOver()
-    {
-        Time.timeScale = 0f;
-        ChangeState(UIState.GameOver);
+        EventManager.OnUIStateChangeRequested -= ChangeState;
     }
 
     public void ChangeState(UIState state)
     {
-        currentState = state;
-        titleUI.SetActive(currentState);
-        characterUI.SetActive(currentState);
-        playUI.SetActive(currentState);
-        pauseUI.SetActive(currentState);
-        gameOverUI.SetActive(currentState);
+        titleUI.SetActive(state);
+        characterUI.SetActive(state);
+        playUI.SetActive(state);
+        pauseUI.SetActive(state);
+        gameOverUI.SetActive(state);
     }
-
 
     public void JumpBtn()
     {
