@@ -32,7 +32,7 @@ public class PauseUI : BaseUI
 
     public void OnClickQuitBtn()
     {
-        SceneManager.LoadScene(TitleScene.SceneName);
+        //SceneManager.LoadScene(TitleScene.SceneName);
     }
 
     protected override UIState GetUIState()
