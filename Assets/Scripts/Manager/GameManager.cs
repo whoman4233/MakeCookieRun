@@ -67,7 +67,6 @@ public class GameManager : MonoBehaviour
         }
         else if (sceneName == "CharacterScene")
         {
-            EventManager.RequestBgmPlay("CharacterTheme");
             EventManager.RequestUIStateChange(UIState.Character);
         }
         else if (sceneName == "GameScene")

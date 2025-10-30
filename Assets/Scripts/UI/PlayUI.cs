@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayUI : BaseUI
 {
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private Image hpSlider;
+    [SerializeField] private Slider hpSlider;
     [SerializeField] private Button pauseBtn;
 
     public override void Init(UIManager uiManager)
@@ -27,7 +27,7 @@ public class PlayUI : BaseUI
 
     public void UpdateHPSlider(float percentage)
     {
-        hpSlider.fillAmount = percentage;
+        hpSlider.value = percentage;
     }
 
     public void UpdateScoreText(int score)
