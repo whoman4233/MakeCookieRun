@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        PlayerMaxHP = PlayerHP;
     }
 
     private bool isDanger = false;
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
     
     public int Score;
     public float PlayerHP;
+    public float PlayerMaxHP;
 
     private bool isGameOver = false;
 

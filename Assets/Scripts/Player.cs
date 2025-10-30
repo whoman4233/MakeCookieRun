@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     private Vector2 boxOffsetOrig;          // 원래 오프셋
     private bool isSliding = false;         // 현재 슬라이드 중?
 
+    private Animator playerAnim;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,22 +40,8 @@ public class Player : MonoBehaviour
         {
             Debug.LogWarning("BoxCollider2D가 없습니다. 슬라이드(콜라이더 축소)는 동작하지 않습니다.");
         }
-    }
 
-    void Update()
-    {
-        // 오른쪽 클릭 = 점프
-        if (Input.GetMouseButtonDown(1))
-        {
-            TryJump();
-        }
-
-        // 왼쪽 클릭: 누르는 동안만 슬라이드(콜라이더 축소)
-        if (Input.GetMouseButtonDown(0))
-            BeginSlide();
-
-        if (Input.GetMouseButtonUp(0))
-            EndSlide();
+        playerAnim = GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
@@ -66,18 +54,22 @@ public class Player : MonoBehaviour
 
         // 땅이면 2단 점프 가능 리셋
         if (isGrounded)
+            playerAnim.SetBool("isGrounded", true);
             canDoubleJump = true;
+            playerAnim.SetBool("CanDoubleJump", true);
     }
 
-    private void TryJump()
+    public void TryJump()
     {
         if (isGrounded)
         {
+            playerAnim.SetBool("isGrounded", false);
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         else if (canDoubleJump)
         {
+            playerAnim.SetBool("CanDoubleJump", false);
             canDoubleJump = false;
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.AddForce(Vector2.up * doubleJumpForce, ForceMode2D.Impulse);
@@ -85,11 +77,13 @@ public class Player : MonoBehaviour
     }
 
     // ----- 슬라이드 시작: 콜라이더 높이만 줄이고, 발 위치 유지 -----
-    private void BeginSlide()
+    public void BeginSlide()
     {
         if (boxCol == null || isSliding) return;
 
         isSliding = true;
+        playerAnim.SetBool("OnSlide", true);
+
 
         float newH = boxSizeOrig.y * slideHeightScale;                 // 줄인 높이
         boxCol.size = new Vector2(boxSizeOrig.x, newH);                // 높이 축소
@@ -98,10 +92,11 @@ public class Player : MonoBehaviour
     }
 
     // ----- 슬라이드 종료: 원래 사이즈/오프셋 복원 -----
-    private void EndSlide()
+    public void EndSlide()
     {
         if (boxCol == null || !isSliding) return;
 
+        playerAnim.SetBool("OnSlide", false);
         boxCol.size = boxSizeOrig;
         boxCol.offset = boxOffsetOrig;
         isSliding = false;
