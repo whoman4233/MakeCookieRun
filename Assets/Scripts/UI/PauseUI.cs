@@ -8,31 +8,30 @@ using UnityEngine.XR;
 public class PauseUI : BaseUI
 {
     [SerializeField] private Button restartBtn;
-    [SerializeField] private Button replayBtn;
+    [SerializeField] private Button resumeBtn;
     [SerializeField] private Button quitBtn;
 
     public override void Init(UIManager uiManager)
     {
         base.Init(uiManager);
-        restartBtn.onClick.AddListener(OnClikRestartBtn);
-        replayBtn.onClick.AddListener(OnClikReplayBtn);
+        restartBtn.onClick.AddListener(OnClickRestartBtn);
+        resumeBtn.onClick.AddListener(OnClickResumeBtn);
         quitBtn.onClick.AddListener(OnClickQuitBtn);
     }
 
-    public void OnClikRestartBtn()
+    public void OnClickRestartBtn()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void OnClikReplayBtn()
+    public void OnClickResumeBtn()
     {
-        Time.timeScale = 1.0f;
-        uiManager.ChangeState(UIState.Play);
+        GameManager.Instance.ResumeGame();
     }
 
     public void OnClickQuitBtn()
     {
-        //SceneManager.LoadScene(TitleScene.SceneName);
+        SceneManager.LoadScene("TitleScene");
     }
 
     protected override UIState GetUIState()

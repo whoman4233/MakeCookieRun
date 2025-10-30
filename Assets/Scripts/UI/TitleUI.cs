@@ -21,13 +21,12 @@ public class TitleUI : BaseUI
 
     public void OnClickStartBtn()
     {
-        //SceneManager.LoadScene(GameScene.sceneName);
-        uiManager.setPlay();
+        SceneManager.LoadScene("GameScene");
     }
 
     public void OnClickCharacterBtn()
     {
-        //SceneManager.LoadScene(Character.sceneName);
+        SceneManager.LoadScene("CharacterScene");
     }
 
     public void OnClickExitBtn()
