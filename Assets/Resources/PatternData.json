@@ -7,18 +7,13 @@
   "doublePatterns": [
     { "obstacles": [1, 1], "xSpacing": 0.5 },
     { "obstacles": [1, 2], "xSpacing": 0.5 },
-    { "obstacles": [2, 2], "xSpacing": 0.5 },
     { "obstacles": [2, 1], "xSpacing": 0.5 },
     { "obstacles": [0, 0], "xSpacing": 0.5 }
   ],
   "triplePatterns": [
-    { "obstacles": [1, 2, 2], "xSpacing": 0.5 },
     { "obstacles": [1, 2, 1], "xSpacing": 0.5 },
     { "obstacles": [1, 1, 2], "xSpacing": 0.5 },
     { "obstacles": [1, 1, 1], "xSpacing": 0.5 },
-    { "obstacles": [2, 1, 1], "xSpacing": 0.5 },
-    { "obstacles": [2, 2, 1], "xSpacing": 0.5 },
-    { "obstacles": [2, 1, 2], "xSpacing": 0.5 },
     { "obstacles": [0, 0, 0], "xSpacing": 0.5 }
   ]
 }

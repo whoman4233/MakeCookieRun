@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
         {
             EventManager.RequestBgmPlay("GameTheme");
             EventManager.RequestUIStateChange(UIState.Play);
+            PlayerHP = PlayerMaxHP;
         }
     }
 
