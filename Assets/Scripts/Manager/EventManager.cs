@@ -10,11 +10,12 @@ namespace Assets.Scripts.Manager
         public static event Action<UIState> OnUIStateChangeRequested;
 
         public static event Action<string> OnSfxPlayRequested;
-
         public static event Action<string> OnBgmPlayRequested;
         public static event Action OnBgmStopRequested;
         public static event Action OnBgmPauseRequested;
         public static event Action OnBgmResumeRequested;
+
+        public static event Action<float> OnPlayerHPChanged;
 
         public static void RequestUIStateChange(UIState state)
         {
@@ -44,6 +45,11 @@ namespace Assets.Scripts.Manager
         public static void RequestBgmResume()
         {
             OnBgmResumeRequested?.Invoke();
+        }
+
+        public static void RequestPlayerHPChange(float percentage)
+        {
+            OnPlayerHPChanged?.Invoke(percentage);
         }
 
     }
