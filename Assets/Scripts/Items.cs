@@ -71,7 +71,7 @@ public class Items : MonoBehaviour
         {
             GameManager.Instance.PlayerHP += 10;
         }
-
+       
         Destroy(collision.gameObject);
     }
 
