@@ -49,7 +49,8 @@ public class UIManager : MonoBehaviour
             gameOverUI = GetComponentInChildren<GameOverUI>(true);
             gameOverUI.Init(this);
 
-            EventManager.OnUIStateChangeRequested += ChangeState; 
+            EventManager.OnUIStateChangeRequested += ChangeState;
+            EventManager.OnPlayerHPChanged += UpdateHPSlider;
         }
         else
         {
@@ -60,6 +61,7 @@ public class UIManager : MonoBehaviour
     private void OnDisable()
     {
         EventManager.OnUIStateChangeRequested -= ChangeState;
+        EventManager.OnPlayerHPChanged -= UpdateHPSlider;
     }
 
     public void ChangeState(UIState state)

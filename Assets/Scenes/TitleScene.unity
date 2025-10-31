@@ -7874,8 +7874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dangerPercentage: 0.3
   Score: 0
-  PlayerHP: 0
-  PlayerMaxHP: 0
+  initialPlayerHP: 100
 --- !u!1 &1903376100
 GameObject:
   m_ObjectHideFlags: 0
