@@ -9,11 +9,24 @@ public class PlayUI : BaseUI
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private Slider hpSlider;
     [SerializeField] private Button pauseBtn;
+    [SerializeField] private Button jumpBtn;
+    [SerializeField] private HoldableButton slideBtn;
 
     public override void Init(UIManager uiManager)
     {
         base.Init(uiManager);
         pauseBtn.onClick.AddListener(OnClickPauseBtn);
+
+        if (jumpBtn != null)
+        {
+            jumpBtn.onClick.AddListener(UIManager.instance.OnJumpBtnClick);
+        }
+
+        if (slideBtn != null)
+        {
+            slideBtn.onPress.AddListener(UIManager.instance.OnSlideBtnPress);
+            slideBtn.onRelease.AddListener(UIManager.instance.OnSlideBtnRelease);
+        }
     }
 
     private void Start()

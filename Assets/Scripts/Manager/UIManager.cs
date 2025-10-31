@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour
     PauseUI pauseUI;
     GameOverUI gameOverUI;
 
+    private Player currentPlayer;
+
     private void Awake()
     {
         if (instance == null)
@@ -63,16 +65,43 @@ public class UIManager : MonoBehaviour
         playUI.SetActive(state);
         pauseUI.SetActive(state);
         gameOverUI.SetActive(state);
+
+        if (state == UIState.Play)
+        {
+            currentPlayer = FindObjectOfType<Player>();
+            if (currentPlayer != null)
+            {
+                Debug.LogWarning("UIManager: GameScene에서 Player를 찾을 수 없음");
+            }
+            else
+            {
+                currentPlayer = null;
+            }
+        }
     }
 
-    public void JumpBtn()
+    public void OnJumpBtnClick()
     {
-        //playerController.Jump();
+        if (currentPlayer != null)
+        {
+            currentPlayer.TryJump();
+        }
     }
 
-    public void SlideBtn()
+    public void OnSlideBtnPress()
     {
-        //playerController.Slide();
+        if (currentPlayer != null)
+        {
+            currentPlayer.BeginSlide();
+        }
+    }
+
+    public void OnSlideBtnRelease()
+    {
+        if (currentPlayer != null)
+        {
+            currentPlayer.EndSlide();
+        }
     }
 
     public void UpdateHPSlider(float percentage)
