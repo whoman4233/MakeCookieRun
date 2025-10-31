@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6747562178794877918}
   - component: {fileID: 4360881683055699844}
   - component: {fileID: 5929917586944065530}
-  - component: {fileID: 5591797346210262654}
   m_Layer: 0
   m_Name: DoubleObstacle_0
   m_TagString: Obstacle
@@ -146,15 +145,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   obstacleType: 2
---- !u!114 &5591797346210262654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7451983224477749789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33987c23b59b84a179d6f485889042c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
