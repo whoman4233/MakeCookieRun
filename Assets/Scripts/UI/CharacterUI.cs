@@ -13,7 +13,6 @@ public class CharacterUI : BaseUI
     [SerializeField] private List<PetData> availablePets;
 
     private SpriteRenderer previewPetSpriteRenderer;
-    private Animator previewPetAnimator;
     private bool arePreviewComponentsFound = false;
 
     private const string SELECTED_PET_ID_KEY = "SelectedPetID";
@@ -46,27 +45,23 @@ public class CharacterUI : BaseUI
 
     private void FindPreviewPetComponents()
     {
-        // [수정] transform.Find 대신 GameObject.FindWithTag를 사용하도록 되돌립니다.
         GameObject previewPetObject = GameObject.FindWithTag("PreviewPet");
 
         if (previewPetObject != null)
         {
-            // 찾은 오브젝트에서 컴포넌트를 가져옵니다.
             previewPetSpriteRenderer = previewPetObject.GetComponent<SpriteRenderer>();
-            previewPetAnimator = previewPetObject.GetComponent<Animator>();
 
-            if (previewPetSpriteRenderer != null && previewPetAnimator != null)
+            if (previewPetSpriteRenderer != null)
             {
                 arePreviewComponentsFound = true; // 성공
             }
             else
             {
-                Debug.LogError("PreviewPet 오브젝트에서 SpriteRenderer 또는 Animator를 찾을 수 없습니다.");
+                Debug.LogError("PreviewPet 오브젝트에서 SpriteRenderer를 찾을 수 없습니다.");
             }
         }
         else
         {
-            // 이 오류가 뜬다면 2단계 (Tag 설정)를 다시 확인하세요.
             Debug.LogError("CharacterScene에서 'PreviewPet' 태그를 가진 오브젝트를 찾을 수 없습니다!");
         }
     }
@@ -145,23 +140,11 @@ public class CharacterUI : BaseUI
         if (petData.petID == 0) // 펫이 없음을 선택한 경우
         {
             previewPetSpriteRenderer.enabled = false;               // 스프라이트 렌더러를 끔 (투명하게 만듦)
-            previewPetAnimator.enabled = false;                     // 애니메이터를 끔
         }
         else // 펫이 선택된 경우
         {
             previewPetSpriteRenderer.enabled = true;                // 스프라이트 렌더러를 켬
             previewPetSpriteRenderer.sprite = petData.petSprite;    // 펫 데이터의 스프라이트로 변경
-
-            if (petData.petAnimatorController != null)
-            {
-                previewPetAnimator.runtimeAnimatorController = petData.petAnimatorController; // 애니메이터 교체
-                previewPetAnimator.enabled = true; // 애니메이터를 켬
-            }
-            else // 애니메이터 컨트롤러가 없다면(작업 안 했거나 연결 깜박했거나)
-            {
-                previewPetAnimator.runtimeAnimatorController = null;
-                previewPetAnimator.enabled = false; // 애니메이터를 끔
-            }
         }
     }
 
