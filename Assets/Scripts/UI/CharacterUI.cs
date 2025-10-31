@@ -53,16 +53,16 @@ public class CharacterUI : BaseUI
 
             if (previewPetSpriteRenderer != null)
             {
-                arePreviewComponentsFound = true; // ¼º°ø
+                arePreviewComponentsFound = true; // ì„±ê³µ
             }
             else
             {
-                Debug.LogError("PreviewPet ¿ÀºêÁ§Æ®¿¡¼­ SpriteRenderer¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+                Debug.LogError("PreviewPet ì˜¤ë¸Œì íŠ¸ì—ì„œ SpriteRendererë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
             }
         }
         else
         {
-            Debug.LogError("CharacterScene¿¡¼­ 'PreviewPet' ÅÂ±×¸¦ °¡Áø ¿ÀºêÁ§Æ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+            Debug.LogError("CharacterSceneì—ì„œ 'PreviewPet' íƒœê·¸ë¥¼ ê°€ì§„ ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
         }
     }
 
@@ -71,27 +71,27 @@ public class CharacterUI : BaseUI
         SceneManager.LoadScene("TitleScene");
     }
 
-    private void OnClickPetSelectButton(int petIndex) // ¼±ÅÃÇÑ ÆêÀ» ÆêÀ¸·Î ¼³Á¤ÇÏ´Â ¸Ş¼­µå
+    private void OnClickPetSelectButton(int petIndex) // ì„ íƒí•œ í«ì„ í«ìœ¼ë¡œ ì„¤ì •í•˜ëŠ” ë©”ì„œë“œ
     {
         if (petIndex >= 0 && petIndex < availablePets.Count)
         {
-            PetData selectedPet = availablePets[petIndex];                  // ¼±ÅÃµÈ ÆêÀÇ ID¸¦ PlayerPrefs¿¡ ÀúÀå
+            PetData selectedPet = availablePets[petIndex];                  // ì„ íƒëœ í«ì˜ IDë¥¼ PlayerPrefsì— ì €ì¥
             PlayerPrefs.SetInt(SELECTED_PET_ID_KEY, selectedPet.petID);
-            PlayerPrefs.Save();                                             // º¯°æ»çÇ× Áï½Ã ÀúÀå
+            PlayerPrefs.Save();                                             // ë³€ê²½ì‚¬í•­ ì¦‰ì‹œ ì €ì¥
             Debug.Log($"Selected Pet: {selectedPet.petName} (ID: {selectedPet.petID})");
             HighlightSelectedPetButton();
             UpdatePreviewPet(selectedPet);
         }
     }
 
-    private void HighlightSelectedPetButton() // ¼±ÅÃÇÑ ÆêÀ» °­Á¶ÇÏ´Â ¸Ş¼­µå
+    private void HighlightSelectedPetButton() // ì„ íƒí•œ í«ì„ ê°•ì¡°í•˜ëŠ” ë©”ì„œë“œ
     {
         if (!arePreviewComponentsFound) return;
 
-        int currentPetID = PlayerPrefs.GetInt(SELECTED_PET_ID_KEY, 0);  // ±âº»°ª 0 (Æê ¾øÀ½)
+        int currentPetID = PlayerPrefs.GetInt(SELECTED_PET_ID_KEY, 0);  // ê¸°ë³¸ê°’ 0 (í« ì—†ìŒ)
         for (int i = 0; i < availablePets.Count; i++)
         {
-            Button petButton = petSelectButtons[i];                     // ¿©±â¿¡¼­ ¹öÆ°ÀÇ »ö»ó, ÀÌ¹ÌÁö, Å×µÎ¸® µîÀ» º¯°æÇÏ¿© ¼±ÅÃ ¿©ºÎ¸¦ Ç¥½Ã
+            Button petButton = petSelectButtons[i];                     // ì—¬ê¸°ì—ì„œ ë²„íŠ¼ì˜ ìƒ‰ìƒ, ì´ë¯¸ì§€, í…Œë‘ë¦¬ ë“±ì„ ë³€ê²½í•˜ì—¬ ì„ íƒ ì—¬ë¶€ë¥¼ í‘œì‹œ
             if (petButton != null)
             {
                 Image buttonImage = petButton.GetComponent<Image>();
@@ -99,11 +99,11 @@ public class CharacterUI : BaseUI
                 {
                     if (availablePets[i].petID == currentPetID)
                     {
-                        buttonImage.color = Color.yellow; // ¼±ÅÃµÊ
+                        buttonImage.color = Color.yellow; // ì„ íƒë¨
                     }
                     else
                     {
-                        buttonImage.color = Color.white; // ¼±ÅÃ ¾È µÊ (±âº» »ö»ó)
+                        buttonImage.color = Color.white; // ì„ íƒ ì•ˆ ë¨ (ê¸°ë³¸ ìƒ‰ìƒ)
                     }
                 }
             }
@@ -114,14 +114,14 @@ public class CharacterUI : BaseUI
     {
         if (!arePreviewComponentsFound) return;
 
-        int currentPetID = PlayerPrefs.GetInt(SELECTED_PET_ID_KEY, 0);              // ±âº»°ª 0 (Æê ¾øÀ½)
-        PetData currentPet = availablePets.Find(pet => pet.petID == currentPetID);  // availablePets ¸®½ºÆ®¿¡¼­ ÀúÀåµÈ ID¿Í ÀÏÄ¡ÇÏ´Â PetData¸¦ Ã£À½
+        int currentPetID = PlayerPrefs.GetInt(SELECTED_PET_ID_KEY, 0);              // ê¸°ë³¸ê°’ 0 (í« ì—†ìŒ)
+        PetData currentPet = availablePets.Find(pet => pet.petID == currentPetID);  // availablePets ë¦¬ìŠ¤íŠ¸ì—ì„œ ì €ì¥ëœ IDì™€ ì¼ì¹˜í•˜ëŠ” PetDataë¥¼ ì°¾ìŒ
 
         if (currentPet != null)
         {
-            UpdatePreviewPet(currentPet); // Ã£Àº Æê µ¥ÀÌÅÍ·Î ¹Ì¸®º¸±â ¾÷µ¥ÀÌÆ®
+            UpdatePreviewPet(currentPet); // ì°¾ì€ í« ë°ì´í„°ë¡œ ë¯¸ë¦¬ë³´ê¸° ì—…ë°ì´íŠ¸
         }
-        else // ¸¸¾à ÀúÀåµÈ ID°¡ ¸®½ºÆ®¿¡ ¾ø´Ù¸é (µ¥ÀÌÅÍ°¡ º¯°æµÇ¾ú°Å³ª ¿À·ù)
+        else // ë§Œì•½ ì €ì¥ëœ IDê°€ ë¦¬ìŠ¤íŠ¸ì— ì—†ë‹¤ë©´ (ë°ì´í„°ê°€ ë³€ê²½ë˜ì—ˆê±°ë‚˜ ì˜¤ë¥˜)
         {
             PetData noPetData = availablePets.Find(pet => pet.petID == 0);
             if (noPetData != null)
@@ -130,21 +130,21 @@ public class CharacterUI : BaseUI
             }
             else
             {
-                Debug.LogError("PetData ¸®½ºÆ®¿¡¼­ ID 0 (Æê ¾øÀ½) µ¥ÀÌÅÍ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+                Debug.LogError("PetData ë¦¬ìŠ¤íŠ¸ì—ì„œ ID 0 (í« ì—†ìŒ) ë°ì´í„°ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
             }
         }
     }
 
     private void UpdatePreviewPet(PetData petData)
     {
-        if (petData.petID == 0) // ÆêÀÌ ¾øÀ½À» ¼±ÅÃÇÑ °æ¿ì
+        if (petData.petID == 0) // í«ì´ ì—†ìŒì„ ì„ íƒí•œ ê²½ìš°
         {
-            previewPetSpriteRenderer.enabled = false;               // ½ºÇÁ¶óÀÌÆ® ·»´õ·¯¸¦ ²û (Åõ¸íÇÏ°Ô ¸¸µê)
+            previewPetSpriteRenderer.enabled = false;               // ìŠ¤í”„ë¼ì´íŠ¸ ë Œë”ëŸ¬ë¥¼ ë” (íˆ¬ëª…í•˜ê²Œ ë§Œë“¦)
         }
-        else // ÆêÀÌ ¼±ÅÃµÈ °æ¿ì
+        else // í«ì´ ì„ íƒëœ ê²½ìš°
         {
-            previewPetSpriteRenderer.enabled = true;                // ½ºÇÁ¶óÀÌÆ® ·»´õ·¯¸¦ ÄÔ
-            previewPetSpriteRenderer.sprite = petData.petSprite;    // Æê µ¥ÀÌÅÍÀÇ ½ºÇÁ¶óÀÌÆ®·Î º¯°æ
+            previewPetSpriteRenderer.enabled = true;                // ìŠ¤í”„ë¼ì´íŠ¸ ë Œë”ëŸ¬ë¥¼ ì¼¬
+            previewPetSpriteRenderer.sprite = petData.petSprite;    // í« ë°ì´í„°ì˜ ìŠ¤í”„ë¼ì´íŠ¸ë¡œ ë³€ê²½
         }
     }
 
