@@ -64,15 +64,15 @@ public class Items : MonoBehaviour
         if (player == null) return;
         
         if (collision.gameObject.name.Contains("Score"))
-       {
-           player.Score += 100;
-       }
-       else if (collision.gameObject.name.Contains("Hp"))
-       {
-           player.Hp += 10;
-       }
+        {
+            GameManager.Instance.Score += 100;
+        }
+        else if (collision.gameObject.name.Contains("Hp"))
+        {
+            GameManager.Instance.PlayerHP += 10;
+        }
        
-       Destroy(collision.gameObject);
+        Destroy(collision.gameObject);
     }
     
     // 장애물과 충돌 시
