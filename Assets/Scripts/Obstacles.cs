@@ -18,5 +18,10 @@ public class Obstacles : MonoBehaviour
                 GameManager.Instance.PlayerHP -= damage;
             }
         }
+
+        if (collision.TryGetComponent<Player>(out Player player))
+        {
+            player.TakeHit();
+        }
     }
 }
