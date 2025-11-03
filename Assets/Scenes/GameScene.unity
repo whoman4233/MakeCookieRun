@@ -701,9 +701,9 @@ MonoBehaviour:
   patternJsonFile: {fileID: 4900000, guid: ac4286c4adacb432b9b66fed4c1020db, type: 3}
   patternPaddingMin: 7
   patternPaddingMax: 13
-  topObstacleY: 3
-  bottomObstacleY: -2.07
-  doubleObstacleY: -1.24
+  topObstacleY: 2.45
+  bottomObstacleY: -3.12
+  doubleObstacleY: -1.95
 --- !u!4 &892611554
 Transform:
   m_ObjectHideFlags: 0

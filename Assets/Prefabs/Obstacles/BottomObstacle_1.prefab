@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4564578442419784879}
   - component: {fileID: 432435010464245896}
-  - component: {fileID: -3556263518297694804}
   - component: {fileID: -5336578247792855581}
+  - component: {fileID: 8470573550889363248}
   m_Layer: 3
   m_Name: BottomObstacle_1
   m_TagString: Obstacle
@@ -86,7 +86,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &-3556263518297694804
+--- !u!114 &-5336578247792855581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6715804209542002116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887743ebf89a944eb889e599fa28833e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  obstacleType: 1
+--- !u!61 &8470573550889363248
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +132,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.34}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,19 +143,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.77, y: 1.3504374}
+  m_Size: {x: 2.77, y: 1.3404342}
   m_EdgeRadius: 0
---- !u!114 &-5336578247792855581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6715804209542002116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887743ebf89a944eb889e599fa28833e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  obstacleType: 1
