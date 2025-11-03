@@ -59,12 +59,12 @@ public class GameManager : MonoBehaviour
 
             EventManager.RequestPlayerHPChange(percentage);
 
-            if (PlayerHP <= dangerPercentage && !isDanger)          // BGM 변경 코드 이동
+            if (percentage <= dangerPercentage && !isDanger)          // BGM 변경 코드 이동
             {
                 isDanger = true;
                 EventManager.RequestBgmPlay("DangerTheme");
             }
-            else if (PlayerHP > dangerPercentage && isDanger)       // BGM 변경 코드 이동
+            else if (percentage > dangerPercentage && isDanger)       // BGM 변경 코드 이동
             {
                 isDanger = false;
                 EventManager.RequestBgmPlay("GameTheme");
