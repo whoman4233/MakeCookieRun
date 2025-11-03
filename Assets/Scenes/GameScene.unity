@@ -374,7 +374,7 @@ Transform:
   m_GameObject: {fileID: 737209682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.73, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -701,9 +701,9 @@ MonoBehaviour:
   patternJsonFile: {fileID: 4900000, guid: ac4286c4adacb432b9b66fed4c1020db, type: 3}
   patternPaddingMin: 7
   patternPaddingMax: 13
-  topObstacleY: 3
-  bottomObstacleY: -2.07
-  doubleObstacleY: -1.24
+  topObstacleY: 2.45
+  bottomObstacleY: -3.12
+  doubleObstacleY: -1.95
 --- !u!4 &892611554
 Transform:
   m_ObjectHideFlags: 0
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   initialItemSpawnStartX: 10
   spawnYRange: 1
   obstaclePadding: 0.5
-  spawnRepeatCycle: 2
+  spawnRepeatCycle: 1
   playerTransform: {fileID: 0}
   offset: {x: 20, y: 0, z: 0}
   checkRadius: 0.5

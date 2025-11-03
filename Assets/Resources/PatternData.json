@@ -1,19 +1,18 @@
 {
   "singlePatterns": [
-    { "obstacles": [0], "xSpacing": 0.5 },
-    { "obstacles": [1], "xSpacing": 0.5 },
-    { "obstacles": [2], "xSpacing": 0.5 }
+    { "obstacles": [0], "xSpacing": 0.2 },
+    { "obstacles": [1], "xSpacing": 0.2 },
+    { "obstacles": [2], "xSpacing": 0.2 }
   ],
   "doublePatterns": [
-    { "obstacles": [1, 1], "xSpacing": 0.5 },
-    { "obstacles": [1, 2], "xSpacing": 0.5 },
-    { "obstacles": [2, 1], "xSpacing": 0.5 },
-    { "obstacles": [0, 0], "xSpacing": 0.5 }
+    { "obstacles": [1, 1], "xSpacing": 0.2 },
+    { "obstacles": [1, 2], "xSpacing": 0.2 },
+    { "obstacles": [2, 1], "xSpacing": 0.2 },
+    { "obstacles": [0, 0], "xSpacing": 0.2 }
   ],
   "triplePatterns": [
-    { "obstacles": [1, 2, 1], "xSpacing": 0.5 },
-    { "obstacles": [1, 1, 2], "xSpacing": 0.5 },
-    { "obstacles": [1, 1, 1], "xSpacing": 0.5 },
-    { "obstacles": [0, 0, 0], "xSpacing": 0.5 }
+    { "obstacles": [1, 2, 1], "xSpacing": 0.2 },
+    { "obstacles": [1, 1, 1], "xSpacing": 0.2 },
+    { "obstacles": [0, 0, 0], "xSpacing": 0.2 }
   ]
 }
