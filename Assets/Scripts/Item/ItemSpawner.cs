@@ -19,7 +19,7 @@ public class ItemSpawner : MonoBehaviour
     // [SerializeField] private float spawnXPaddingMin = 3f;
     // [SerializeField] private float spawnXPaddingMax = 3f;
     [SerializeField] private float obstaclePadding = 0.5f; 
-    [SerializeField] private float spawnRepeatCycle = 2f;// Obstacle과의 간격
+    [SerializeField] private float spawnRepeatCycle = 0.5f;// Obstacle과의 간격
     
     [Header("Follow Player")]
     [SerializeField] private Transform playerTransform;
