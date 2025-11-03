@@ -8,7 +8,7 @@ using Assets.Scripts.Manager;
 
 public class GameOverUI : BaseUI
 {
-    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private Text scoreText;
     [SerializeField] private Button restartBtn;
     [SerializeField] private Button toTitleBtn;
 

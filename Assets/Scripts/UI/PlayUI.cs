@@ -7,7 +7,7 @@ using Assets.Scripts.Manager;
 
 public class PlayUI : BaseUI
 {
-    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private Text scoreText;
     [SerializeField] private Slider hpSlider;
     [SerializeField] private Button pauseBtn;
     [SerializeField] private Button jumpBtn;
