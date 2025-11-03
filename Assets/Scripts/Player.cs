@@ -1,5 +1,7 @@
 using UnityEngine;
 using Assets.Scripts.Manager;
+using System.Collections; // [ADDED] 코루틴 사용을 위한 네임스페이스
+
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -23,6 +25,11 @@ public class Player : MonoBehaviour
     private bool isSliding = false;         // 현재 슬라이드 중?
 
     private Animator playerAnim;
+
+    // ====== Invincibility(잠깐 무적) ======
+    [Header("Invincibility")]
+    public float invincibleTime = 1.0f;   // [ADDED] 피격 후 무적 유지 시간(초)
+    private bool isInvincible = false;    // [ADDED] 현재 무적인가?
 
     void Start()
     {
@@ -89,10 +96,9 @@ public class Player : MonoBehaviour
         isSliding = true;
         playerAnim.SetBool("OnSlide", true);
 
-
         float newH = boxSizeOrig.y * slideHeightScale;                 // 줄인 높이
         boxCol.size = new Vector2(boxSizeOrig.x, newH);                // 높이 축소
-        boxCol.offset = boxOffsetOrig + new Vector2(0f,               // 오프셋을 내려서
+        boxCol.offset = boxOffsetOrig + new Vector2(0f,                // 오프셋을 내려서
                             -(boxSizeOrig.y - newH) * 0.5f);           // 발 위치(바닥) 유지
     }
 
@@ -108,11 +114,26 @@ public class Player : MonoBehaviour
     }
 
     // 장애물과 충돌 시 Trigger 변경
-    public void TakeHit() // Obstacle.cs에서 호출
+    public void TakeHit()
     {
+        if (isInvincible) return; // 무적이면 무시
+
+        // HP 깎기
+        GameManager.Instance.PlayerHP -= 10; // ← 상수로 10! (나중에 바꾸면 됨)
+
+        // 맞은 애니메이션
         if (playerAnim != null)
-        {
             playerAnim.SetTrigger("OnHit");
-        }
+
+        // 무적 시작
+        StartCoroutine(InvincibleCoroutine());
+    }
+
+    // [ADDED] invincibleTime 동안 추가 피격 무시
+    private IEnumerator InvincibleCoroutine()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(invincibleTime);
+        isInvincible = false;
     }
 }

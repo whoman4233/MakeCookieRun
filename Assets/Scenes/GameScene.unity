@@ -517,6 +517,7 @@ MonoBehaviour:
   jumpForce: 13
   doubleJumpForce: 13
   slideHeightScale: 0.6
+  invincibleTime: 1
 --- !u!61 &821166583
 BoxCollider2D:
   m_ObjectHideFlags: 0
