@@ -20,6 +20,7 @@ public class ItemSpawner : MonoBehaviour
     // [SerializeField] private float spawnXPaddingMax = 3f;
     [SerializeField] private float obstaclePadding = 0.5f; 
     [SerializeField] private float spawnRepeatCycle = 0.5f;// Obstacle과의 간격
+    [SerializeField] private float spawnPercent = 0.6f;
     
     [Header("Follow Player")]
     [SerializeField] private Transform playerTransform;
@@ -126,13 +127,25 @@ public class ItemSpawner : MonoBehaviour
     
     // Item의 종류가 많을 때 사용
     // Item Type 랜덤 뽑기
-    public Items.ItemType GetRandomItemType()
+    /*public Items.ItemType GetRandomItemType()
     {
         var values = System.Enum.GetValues(typeof(Items.ItemType));
         
         int index = Random.Range(0, values.Length);
         
         return (Items.ItemType)values.GetValue(index);
+    }*/
+    
+    // Item의 종류가 두 개일 때 사용
+    // Item Type 확률 뽑기
+    public Items.ItemType GetRandomItemType()
+    {
+        float chance = Random.value;
+        
+        if (chance < spawnPercent)
+            return Items.ItemType.Score;
+        else
+            return Items.ItemType.HP;
     }
 
     private Vector3 AdjustPositionForObstacle(Vector3 position, Collider2D obstacle)
