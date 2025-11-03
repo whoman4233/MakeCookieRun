@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -102,5 +102,14 @@ public class Player : MonoBehaviour
         boxCol.size = boxSizeOrig;
         boxCol.offset = boxOffsetOrig;
         isSliding = false;
+    }
+
+    // 장애물과 충돌 시 Trigger 변경
+    public void TakeHit() // Obstacle.cs에서 호출
+    {
+        if (playerAnim != null)
+        {
+            playerAnim.SetTrigger("OnHit");
+        }
     }
 }
