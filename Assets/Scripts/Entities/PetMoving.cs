@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PetMoving : MonoBehaviour
 {
@@ -23,7 +24,12 @@ public class PetMoving : MonoBehaviour
             return;
         }
 
-        LoadPetData();
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        if (currentSceneName == "GameScene")
+        {
+            LoadPetData();
+        }
 
         startLocalPosition = transform.localPosition;
     }
