@@ -8,21 +8,21 @@ public class MapManager : MonoBehaviour
     [SerializeField] private TextAsset patternJsonFile; // JSON 파일
     
     private ObstaclePatternData patternData;
-    private float lastSpawnX = 0f;
+    private float lastSpawnX = 5f;
     private float patternPadding; // 패턴 간 간격
     [SerializeField] private float patternPaddingMin = 3f;
     [SerializeField] private float patternPaddingMax = 7f;
     
     [Header("Obstacle Y Location")]
     [SerializeField] private float topObstacleY = 3f;    // 위에서 아래 Y 위치
-    [SerializeField] private float bottomObstacleY = -2f; // 아래에서 위 Y 위치
+    [SerializeField] private float bottomObstacleY = -3.3f; // 아래에서 위 Y 위치
     [SerializeField] private float doubleObstacleY = -2f; // 더블점프 Y 위치
 
     private int topPatternCount = 0;
     private int bottomPatternCount = 0;
     private int patternCountMax = 3;
     
-    private void Start()
+    private void Start()    
     {
         LoadPatterns();
         StartCoroutine(PreSpawnPatterns());
