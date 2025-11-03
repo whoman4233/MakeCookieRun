@@ -1317,7 +1317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3a17540ecb25425daa682cbf59359cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePool: {fileID: 0}
+  obstaclePool: {fileID: 1958846569}
   patternJsonFile: {fileID: 4900000, guid: ac4286c4adacb432b9b66fed4c1020db, type: 3}
   patternPaddingMin: 7
   patternPaddingMax: 13
@@ -2701,6 +2701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1958846568}
+  - component: {fileID: 1958846569}
   m_Layer: 0
   m_Name: ObstaclePool
   m_TagString: Untagged
@@ -2723,6 +2724,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 892611554}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1958846569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958846567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380254a34b9e24034aabed3009b310dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topObstaclePrefabs:
+  - {fileID: 6798971735068316206, guid: 7f5cff8b37a8e4d67ba5640fffe0a479, type: 3}
+  - {fileID: 5120081031071553198, guid: 6aed648b1c7f74d3796bce31d0d56f52, type: 3}
+  bottomObstaclePrefabs:
+  - {fileID: 6505398430889762297, guid: 63a2a9a8be4f544988f453cd779e6efa, type: 3}
+  - {fileID: 6715804209542002116, guid: 05246dc2597a54b9aa7a4184712f03f4, type: 3}
+  doubleObstaclePrefabs:
+  - {fileID: 7451983224477749789, guid: f2e4b3e63334f45569bcc245bad44735, type: 3}
+  - {fileID: 6511346482474388029, guid: 398b15af13bcf42e99fcdf517bb91f1c, type: 3}
+  - {fileID: 6511346482474388029, guid: 398b15af13bcf42e99fcdf517bb91f1c, type: 3}
 --- !u!1 &2124322567
 GameObject:
   m_ObjectHideFlags: 0
