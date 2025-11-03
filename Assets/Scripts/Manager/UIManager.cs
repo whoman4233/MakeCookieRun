@@ -146,5 +146,13 @@ public class UIManager : MonoBehaviour
             playUI.UpdateScoreText(newScore);
         }
     }
+
+    public void SetGameOverScore(int finalScore)
+    {
+        if (gameOverUI != null)
+        {
+            gameOverUI.UpdateScoreText(finalScore);
+        }
+    }
 }
 

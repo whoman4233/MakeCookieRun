@@ -152,6 +152,13 @@ public class GameManager : MonoBehaviour
         EventManager.RequestSfxPlay("GameOver");
         EventManager.RequestBgmPlay("GameOverTheme");
         EventManager.RequestUIStateChange(UIState.GameOver);
+
+        if (UIManager.instance != null)
+        {
+            UIManager.instance.SetGameOverScore(_score); // _score는 현재 최종 점수.
+        }
+
+        EventManager.RequestUIStateChange(UIState.GameOver);
     }
 
     public void OnDisable()
