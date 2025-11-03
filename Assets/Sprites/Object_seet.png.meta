@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97fac6cd15c7b354796932cf86134dd8
+guid: 506094ed28115e045a0502c6485e0af5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -118,14 +118,14 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea6bea5768f32bf419ee2ce239b2b110
-      internalID: 167433630
+      spriteID: 16413a7355178454385b0c2c904eedac
+      internalID: -208217834
       vertices: []
       indices: 
       edges: []
@@ -139,20 +139,20 @@ TextureImporter:
         width: 1920
         height: 221
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6a10f353eeae63408aada79940aedfd
-      internalID: 819480308
+      spriteID: 3c1c3f5e4eb934d4f9480db2fb62723d
+      internalID: -1731483929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BackGroud_2
+      name: BackGround_2
       rect:
         serializedVersion: 2
         x: 0
@@ -160,77 +160,14 @@ TextureImporter:
         width: 1920
         height: 366
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ffa625c337f8634890eb02601acb2e4
-      internalID: 918553054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Endpanel
-      rect:
-        serializedVersion: 2
-        x: 1952
-        y: 1888
-        width: 1487
-        height: 950
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ffb60eb67b288e4faf358df5f1ed761
-      internalID: 848361995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Back_Button
-      rect:
-        serializedVersion: 2
-        x: 1958
-        y: 1551
-        width: 558
-        height: 303
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9185682c462567a4fbc47c95822fba45
-      internalID: -1546448190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Retry_Button
-      rect:
-        serializedVersion: 2
-        x: 1958
-        y: 1233
-        width: 558
-        height: 303
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 141d59701a699c1478c8a3f3d82f3795
-      internalID: -2146944590
+      spriteID: 26fc931e6b7036c48a78a6f9f5c3e2a1
+      internalID: -1006127941
       vertices: []
       indices: 
       edges: []
@@ -244,14 +181,14 @@ TextureImporter:
         width: 322
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 083984bbc31304949b02323b6baa70a2
-      internalID: -221851769
+      spriteID: 77450b55a8c86f3488dcb99e16b4e813
+      internalID: 1258035360
       vertices: []
       indices: 
       edges: []
@@ -265,14 +202,77 @@ TextureImporter:
         width: 322
         height: 232
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 435d49e09f30d49429fa71e66954bed4
-      internalID: -467275847
+      spriteID: cd4b7a2433624cd4dae3aa079c6a5772
+      internalID: -2145412753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Endpanel
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 1888
+        width: 1487
+        height: 950
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebbc31184204544da0d944835c26455
+      internalID: 312599045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back_Button
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 1524
+        width: 558
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82fb9c60094cc5d42993cf05cfbecaa8
+      internalID: -239154722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Retry_Button
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 1204
+        width: 558
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f10b74914ba094f9cb5b8e5bdc2e5a
+      internalID: 1486163112
       vertices: []
       indices: 
       edges: []
@@ -282,18 +282,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2573
-        y: 1190
+        y: 1162
         width: 158
-        height: 157
+        height: 158
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53561f6bbaa47bf499bf565b36b2af1a
-      internalID: 297031468
+      spriteID: 311bbb70256c8314a8b51e3104dfe986
+      internalID: 1721560879
       vertices: []
       indices: 
       edges: []
@@ -307,14 +307,14 @@ TextureImporter:
         width: 1402
         height: 143
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5f0fbf7532557a4aa22dc164d003af5
-      internalID: 1180497724
+      spriteID: aca80f70734db7b43b533eadcea7d930
+      internalID: -1026863306
       vertices: []
       indices: 
       edges: []
@@ -323,19 +323,19 @@ TextureImporter:
       name: Hpgauge
       rect:
         serializedVersion: 2
-        x: 2498
-        y: 881
-        width: 1133
-        height: 87
+        x: 2499
+        y: 882
+        width: 1131
+        height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c17fdf7cda127c64088933cc1380b088
-      internalID: 1017461720
+      spriteID: 66e342312d02ee74a881ba2eca96354a
+      internalID: -652546270
       vertices: []
       indices: 
       edges: []
@@ -349,14 +349,14 @@ TextureImporter:
         width: 188
         height: 894
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ac38acdb21d1a343af896c6f56bba06
-      internalID: -693688861
+      spriteID: b74207a9de07d9149a2a4b1e57f1f4d1
+      internalID: 1157887314
       vertices: []
       indices: 
       edges: []
@@ -365,19 +365,19 @@ TextureImporter:
       name: Opstacle_2
       rect:
         serializedVersion: 2
-        x: 1726
-        y: 246
-        width: 188
-        height: 892
+        x: 1725
+        y: 245
+        width: 189
+        height: 894
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17a1c0188e37b804fba1a0329e060752
-      internalID: -1155446785
+      spriteID: 47aa4f9d437d16447aa79b96b8efe91d
+      internalID: -1319289408
       vertices: []
       indices: 
       edges: []
@@ -386,19 +386,19 @@ TextureImporter:
       name: Opstacle_3
       rect:
         serializedVersion: 2
-        x: 1380
+        x: 1379
         y: 247
-        width: 283
-        height: 591
+        width: 284
+        height: 434
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94d68ed17c1e8ae4087375ed1e0a0762
-      internalID: 821790371
+      spriteID: ce32491cd703ffa4687e2b519faf88d9
+      internalID: 960547958
       vertices: []
       indices: 
       edges: []
@@ -407,19 +407,19 @@ TextureImporter:
       name: Opstacle_4
       rect:
         serializedVersion: 2
-        x: 1087
-        y: 246
-        width: 278
-        height: 583
+        x: 1086
+        y: 245
+        width: 279
+        height: 447
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3645c94a9d88e2243a2e7066bf0b4eea
-      internalID: 1120578650
+      spriteID: ee95af6b1d7533741affe3ef4f7a8547
+      internalID: -1511917562
       vertices: []
       indices: 
       edges: []
@@ -433,14 +433,14 @@ TextureImporter:
         width: 201
         height: 430
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c89d5e2087d4b104c8edd5f30e3dac27
-      internalID: 1759089752
+      spriteID: e2b0cdaca2354214fb13e84203278a80
+      internalID: 5315303
       vertices: []
       indices: 
       edges: []
@@ -454,14 +454,35 @@ TextureImporter:
         width: 277
         height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5086670299b56af44b486a93d28d3dcd
-      internalID: -1793819535
+      spriteID: d3f04e27a0e6e4b42bc71e4bb40b0364
+      internalID: -1171878582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Opstacle_7
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 247
+        width: 277
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8139aeec6c8a8af478e79f89d023c2ae
+      internalID: -1491140768
       vertices: []
       indices: 
       edges: []
@@ -475,14 +496,14 @@ TextureImporter:
         width: 150
         height: 162
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4434793b2ab2ee540b7283087e3514e2
-      internalID: -1716379535
+      spriteID: 25567a19f4062264f80295fb3cf33da7
+      internalID: -1385157483
       vertices: []
       indices: 
       edges: []
@@ -496,14 +517,14 @@ TextureImporter:
         width: 174
         height: 123
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c1a262b34fc91444803681d687d9705
-      internalID: -855147061
+      spriteID: 00572be0302093248b152a68ee8359d0
+      internalID: 1465682685
       vertices: []
       indices: 
       edges: []
@@ -519,25 +540,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BackGroud_2: 918553054
-      BackGround_1: 167433630
-      Back_Button: -1546448190
-      Button_0: -221851769
-      Button_1: -467275847
-      Coin: -1716379535
-      Endpanel: 848361995
-      Ground: 819480308
-      HealItem: -855147061
-      Hpbar: 1180497724
-      Hpgauge: 1017461720
-      Opstacle_1: -693688861
-      Opstacle_2: -1155446785
-      Opstacle_3: 821790371
-      Opstacle_4: 1120578650
-      Opstacle_5: 1759089752
-      Opstacle_6: -1793819535
-      Retry_Button: -2146944590
-      Setting: 297031468
+      BackGround_1: -208217834
+      BackGround_2: -1006127941
+      Back_Button: -239154722
+      Button_0: 1258035360
+      Button_1: -2145412753
+      Coin: -1385157483
+      Endpanel: 312599045
+      Ground: -1731483929
+      HealItem: 1465682685
+      Hpbar: -1026863306
+      Hpgauge: -652546270
+      Opstacle_1: 1157887314
+      Opstacle_2: -1319289408
+      Opstacle_3: 960547958
+      Opstacle_4: -1511917562
+      Opstacle_5: 5315303
+      Opstacle_6: -1171878582
+      Opstacle_7: -1491140768
+      Retry_Button: 1486163112
+      Setting: 1721560879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
