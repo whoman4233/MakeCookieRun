@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     // ====== Invincibility(잠깐 무적) ======
     [Header("Invincibility")]
-    public float invincibleTime = 1.0f;   // [ADDED] 피격 후 무적 유지 시간(초)
+    [SerializeField] private float invincibleTime = 1.0f;   // [ADDED] 피격 후 무적 유지 시간(초)
     private bool isInvincible = false;    // [ADDED] 현재 무적인가?
 
     void Start()
