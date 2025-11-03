@@ -12,5 +12,14 @@ public class ObstacleReturner : MonoBehaviour
                 pool.ReturnObstacle(obstacle.gameObject, obstacle.obstacleType);
             }
         }
+        
+        if(collision.TryGetComponent<Items>(out Items item))
+        {
+            ItemPool pool = FindObjectOfType<ItemPool>();
+            if (pool != null)
+            {
+                pool.ReturnObstacle(item.gameObject, item.itemType);
+            }
+        }
     }
 }
