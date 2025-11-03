@@ -43,6 +43,12 @@ public class CharacterUI : BaseUI
         }
     }
 
+    private void OnDisable()
+    {
+        arePreviewComponentsFound = false;
+        previewPetSpriteRenderer = null;
+    }
+
     private void FindPreviewPetComponents()
     {
         GameObject previewPetObject = GameObject.FindWithTag("PreviewPet");
