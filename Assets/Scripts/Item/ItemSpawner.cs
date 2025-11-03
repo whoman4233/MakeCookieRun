@@ -21,12 +21,16 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] private float obstaclePadding = 0.5f; 
     [SerializeField] private float spawnRepeatCycle = 2f;// Obstacle과의 간격
     
+    [Header("Follow Player")]
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private Vector3 offset = new Vector3(20f, 0f, 0f);
+    
     [Header("Collision Check")]
     [SerializeField] private float checkRadius = 1f;          // 충돌 검사 반경
     [SerializeField] private LayerMask obstacleLayer;           // Obstacle 레이어
     
     // private float _nextSpawnDistance = 0f;
-    private float _lastSpawnX = 0f;
+    // private float _lastSpawnX = 0f;
 
     private GameObject lastItem = null;
     
@@ -36,13 +40,20 @@ public class ItemSpawner : MonoBehaviour
 
     void Start()
     {
+        if (playerTransform == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+                playerTransform = player.transform;
+        }
+        
         if (itemPool == null)
             itemPool = FindObjectOfType<ItemPool>();
         
         if (mapManager == null)
             mapManager = FindObjectOfType<MapManager>();
         
-        _lastSpawnX = transform.position.x;
+        // _lastSpawnX = transform.position.x;
 
         InvokeRepeating(nameof(ContinuousSpawn), 0f, spawnRepeatCycle);
     }
@@ -145,5 +156,18 @@ public class ItemSpawner : MonoBehaviour
         }
 
         return adjustedPosition;
+    }
+    
+    // ItemSpawner 위치 업데이트
+    void LateUpdate()
+    {
+        if (playerTransform != null)
+        {
+            transform.position = new Vector3(
+                playerTransform.position.x + offset.x,
+                transform.position.y,
+                transform.position.z
+            );
+        }
     }
 }
