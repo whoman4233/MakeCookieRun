@@ -6,6 +6,10 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    [Header("Speed Growth")]
+    public float speedIncreaseRate = 0.1f; // 1초당 스피드 증가량
+    public float maxSpeed = 20f; // 최고 속도 제한
+
     [Header("Move")]
     public float forwardSpeed = 9f;
 
@@ -66,6 +70,9 @@ public class Player : MonoBehaviour
             canDoubleJump = true;
             playerAnim.SetBool("CanDoubleJump", true);
         }
+        // 시간 지날수록 이동속도 증가
+        forwardSpeed = Mathf.Min(forwardSpeed + speedIncreaseRate * Time.deltaTime, maxSpeed);
+
     }
 
     public void TryJump()
