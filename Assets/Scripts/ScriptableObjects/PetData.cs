@@ -5,8 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewPetData", menuName = "ScriptableObjects/Pet Data")]
 public class PetData : ScriptableObject
 {
-    public int petID;                                       // ÆêÀ» ½Äº°ÇÒ °íÀ¯ ID (0Àº Æê ¾øÀ½)
-    public string petName;                                  // Æê ÀÌ¸§
-    public Sprite petSprite;                                // ÆêÀÇ ±âº» ½ºÇÁ¶óÀÌÆ® (Static Image)ÀÌ ÀÖ´Â °æ¿ì)
-    public Vector3 offset;                                  // Ä³¸¯ÅÍ¿ÍÀÇ »ó´ëÀû À§Ä¡ ¿ÀÇÁ¼Â (¼±ÅÃ »çÇ×)
+    public int petID;                                       // í«ì„ ì‹ë³„í•  ê³ ìœ  ID (0ì€ í« ì—†ìŒ)
+    public string petName;                                  // í« ì´ë¦„
+    public Sprite petSprite;                                // í«ì˜ ê¸°ë³¸ ìŠ¤í”„ë¼ì´íŠ¸ (Static Image)ì´ ìˆëŠ” ê²½ìš°)
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.Scripts.Manager;
 
 public class PlayUI : BaseUI
 {
@@ -35,6 +36,7 @@ public class PlayUI : BaseUI
     }
     public void OnClickPauseBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         GameManager.Instance.PauseGame();
     }
 

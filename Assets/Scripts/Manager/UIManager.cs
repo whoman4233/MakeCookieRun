@@ -51,6 +51,7 @@ public class UIManager : MonoBehaviour
 
             EventManager.OnUIStateChangeRequested += ChangeState;
             EventManager.OnPlayerHPChanged += UpdateHPSlider;
+            EventManager.OnScoreChanged += UpdateScoreText;
         }
         else
         {
@@ -77,7 +78,7 @@ public class UIManager : MonoBehaviour
             currentPlayer = FindObjectOfType<Player>();
             if (currentPlayer != null)
             {
-                Debug.LogWarning("UIManager: GameScene¿¡¼­ Player¸¦ Ã£À» ¼ö ¾øÀ½");
+                Debug.LogWarning("UIManager: GameSceneì—ì„œ Playerë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŒ");
             }
             else
             {
@@ -94,7 +95,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("SettingUI°¡ UIManager¿¡ ¿¬°áµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+            Debug.LogError("SettingUIê°€ UIManagerì— ì—°ê²°ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
         }
     }
 
@@ -135,6 +136,14 @@ public class UIManager : MonoBehaviour
         if (playUI != null)
         {
             playUI.UpdateHPSlider(percentage);
+        }
+    }
+
+    public void UpdateScoreText(int newScore)
+    {
+        if (playUI != null)
+        {
+            playUI.UpdateScoreText(newScore);
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.Scripts.Manager;
 
 public class SettingUI : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class SettingUI : MonoBehaviour
 
     private void OnClickCloseBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         uiManager.CloseSettingsPanel();
     }
 

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using Assets.Scripts.Manager;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -65,12 +65,14 @@ public class Player : MonoBehaviour
     {
         if (isGrounded)
         {
+            EventManager.RequestSfxPlay("NormalJump");
             playerAnim.SetBool("isGrounded", false);
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         else if (canDoubleJump)
         {
+            EventManager.RequestSfxPlay("DoubleJump");
             playerAnim.SetBool("CanDoubleJump", false);
             canDoubleJump = false;
             rb.velocity = new Vector2(rb.velocity.x, 0f);
@@ -83,6 +85,7 @@ public class Player : MonoBehaviour
     {
         if (boxCol == null || isSliding) return;
 
+        EventManager.RequestSfxPlay("Slide");
         isSliding = true;
         playerAnim.SetBool("OnSlide", true);
 

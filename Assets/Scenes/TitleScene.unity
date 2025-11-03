@@ -1855,7 +1855,7 @@ GameObject:
   - component: {fileID: 465051995}
   m_Layer: 5
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4387,7 +4387,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -8061,7 +8061,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dangerPercentage: 0.3
-  Score: 0
   initialPlayerHP: 100
 --- !u!1 &1903376100
 GameObject:
@@ -8241,7 +8240,23 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1c08f8450b6cedb4b893679a2ce0300a, type: 3}
   - name: GameOverTheme
     clip: {fileID: 8300000, guid: b573828ce65770e4aba935d28b7e7962, type: 3}
-  sfxClips: []
+  sfxClips:
+  - name: Button
+    clip: {fileID: 8300000, guid: 60239a0dbb6db3a49af9c291cb0c6235, type: 3}
+  - name: AddScore
+    clip: {fileID: 8300000, guid: 67fd8936ede80434b9bd0136d63cd434, type: 3}
+  - name: AddHP
+    clip: {fileID: 8300000, guid: 75389a11c26be3445953f541883e3008, type: 3}
+  - name: NormalJump
+    clip: {fileID: 8300000, guid: d31b905b2e35304469133d7ec85e4e82, type: 3}
+  - name: DoubleJump
+    clip: {fileID: 8300000, guid: fe657a7493823e14cb3f07626a5c982f, type: 3}
+  - name: Slide
+    clip: {fileID: 8300000, guid: 09dd0950eb8694b4fb02bcb002acbbfa, type: 3}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 877feabe96e1c4543bb79b45b2a73521, type: 3}
+  - name: Restart
+    clip: {fileID: 8300000, guid: ec64539296540a246989de4063db6bac, type: 3}
 --- !u!1 &2007813480
 GameObject:
   m_ObjectHideFlags: 0
@@ -8523,7 +8538,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

@@ -1,16 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PetMoving : MonoBehaviour
 {
+    [Header("Bobbing Settings")]
     [SerializeField] private float bobSpeed = 3.0f;   // 위아래로 움직이는 속도
     [SerializeField] private float bobHeight = 0.2f;  // 움직이는 높이 (진폭)
     private Vector3 startLocalPosition; // 펫의 원래 로컬 위치
 
+    [Header("Data")]
+    private SpriteRenderer spriteRenderer;
+    private const string SELECTED_PET_ID_KEY = "SelectedPetID";
+
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("PetMoving: SpriteRenderer가 없습니다!");
+            return;
+        }
+
+        LoadPetData();
+
         startLocalPosition = transform.localPosition;
+    }
+
+    void LoadPetData()
+    {
+        PetData[] allPetData = Resources.LoadAll<PetData>("PetData");
+
+        int selectedPetID = PlayerPrefs.GetInt(SELECTED_PET_ID_KEY, 0);
+        PetData currentPetData = allPetData.FirstOrDefault(pet => pet.petID == selectedPetID);
+
+        if (currentPetData != null && currentPetData.petID != 0)
+        {
+            gameObject.SetActive(true);
+            spriteRenderer.sprite = currentPetData.petSprite;
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     void Update()

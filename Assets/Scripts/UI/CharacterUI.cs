@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Assets.Scripts.Manager;
 
 public class CharacterUI : BaseUI
 {
@@ -74,11 +75,14 @@ public class CharacterUI : BaseUI
 
     public void OnClickTotitleBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         SceneManager.LoadScene("TitleScene");
     }
 
     private void OnClickPetSelectButton(int petIndex) // 선택한 펫을 펫으로 설정하는 메서드
     {
+        EventManager.RequestSfxPlay("Button");
+
         if (petIndex >= 0 && petIndex < availablePets.Count)
         {
             PetData selectedPet = availablePets[petIndex];                  // 선택된 펫의 ID를 PlayerPrefs에 저장

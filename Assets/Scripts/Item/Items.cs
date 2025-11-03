@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Assets.Scripts.Manager;
 
 public class Items : MonoBehaviour
 { 
@@ -41,16 +42,18 @@ public class Items : MonoBehaviour
 
     private void ApplyItemEffect(GameObject player)
     {
-        // ⚙️ 여기서 플레이어 상태 적용
+        // 여기서 플레이어 상태 적용
         switch (itemType)
         {
             case ItemType.HP:
                 Debug.Log($"플레이어 HP +{hpEffect}");
                 GameManager.Instance.PlayerHP += hpEffect;
+                EventManager.RequestSfxPlay("AddHP");
                 break;
             case ItemType.Score:
                 Debug.Log($"플레이어 Score +{scoreEffect}");
                 GameManager.Instance.Score += scoreEffect;
+                EventManager.RequestSfxPlay("AddScore");
                 break;
         }
     }

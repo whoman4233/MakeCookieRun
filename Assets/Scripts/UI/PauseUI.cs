@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR;
+using Assets.Scripts.Manager;
 
 public class PauseUI : BaseUI
 {
@@ -21,16 +22,19 @@ public class PauseUI : BaseUI
 
     public void OnClickRestartBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnClickResumeBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         GameManager.Instance.ResumeGame();
     }
 
     public void OnClickQuitBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         SceneManager.LoadScene("TitleScene");
     }
 

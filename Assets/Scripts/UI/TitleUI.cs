@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using Assets.Scripts.Manager;
 
 public class TitleUI : BaseUI
 {
@@ -23,21 +23,25 @@ public class TitleUI : BaseUI
 
     public void OnClickStartBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         SceneManager.LoadScene("GameScene");
     }
 
     public void OnClickExitBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         Application.Quit();
     }
 
     public void OnClickCharacterBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         SceneManager.LoadScene("CharacterScene");
     }
 
     public void OnClickSettingBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         uiManager.OpenSettingsPanel();
     }
 

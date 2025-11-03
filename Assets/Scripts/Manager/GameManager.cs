@@ -33,13 +33,22 @@ public class GameManager : MonoBehaviour
 
     private bool isGameOver = false;
 
-
-    public int Score;
+    private int _score;
+    public int Score
+    {
+        get { return _score; }
+        set
+        {
+            _score = value;
+            // ê°’ì´ ë³€ê²½ë  ë•Œë§ˆë‹¤ EventManagerì— ì‹ í˜¸ë¥¼ ë³´ëƒ…ë‹ˆë‹¤.
+            EventManager.RequestScoreChange(_score);
+        }
+    }
 
     [SerializeField] private float initialPlayerHP = 100f;
     public float PlayerMaxHP { get; private set; }
-    private float _playerHP;    // PlayerHPÀÇ ½ÇÁ¦ °ªÀ» ÀúÀåÇÒ ºñ°ø°³ º¯¼ö
-    public float PlayerHP       // ÇÁ·ÎÆÛÆ¼·Î º¯°æ
+    private float _playerHP;    // PlayerHPì˜ ì‹¤ì œ ê°’ì„ ì €ì¥í•  ë¹„ê³µê°œ ë³€ìˆ˜
+    public float PlayerHP       // í”„ë¡œí¼í‹°ë¡œ ë³€ê²½
     {
         get { return _playerHP; }
         set
@@ -50,12 +59,12 @@ public class GameManager : MonoBehaviour
 
             EventManager.RequestPlayerHPChange(percentage);
 
-            if (PlayerHP <= dangerPercentage && !isDanger)          // BGM º¯°æ ÄÚµå ÀÌµ¿
+            if (PlayerHP <= dangerPercentage && !isDanger)          // BGM ë³€ê²½ ì½”ë“œ ì´ë™
             {
                 isDanger = true;
                 EventManager.RequestBgmPlay("DangerTheme");
             }
-            else if (PlayerHP > dangerPercentage && isDanger)       // BGM º¯°æ ÄÚµå ÀÌµ¿
+            else if (PlayerHP > dangerPercentage && isDanger)       // BGM ë³€ê²½ ì½”ë“œ ì´ë™
             {
                 isDanger = false;
                 EventManager.RequestBgmPlay("GameTheme");
@@ -83,6 +92,8 @@ public class GameManager : MonoBehaviour
         }
         PlayerMaxHP = initialPlayerHP;
         PlayerHP = initialPlayerHP;
+
+        Score = 0;
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -105,6 +116,8 @@ public class GameManager : MonoBehaviour
             EventManager.RequestBgmPlay("GameTheme");
             EventManager.RequestUIStateChange(UIState.Play);
             PlayerHP = PlayerMaxHP;
+
+            Score = 0;
         }
     }
 
@@ -118,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0f; // °ÔÀÓ ÀÏ½Ã Á¤Áö
+        Time.timeScale = 0f; // ê²Œì„ ì¼ì‹œ ì •ì§€
         EventManager.RequestBgmPause();
         EventManager.RequestUIStateChange(UIState.Pause);
     }
@@ -136,6 +149,7 @@ public class GameManager : MonoBehaviour
 
         isGameOver = true;
         Time.timeScale = 0f;
+        EventManager.RequestSfxPlay("GameOver");
         EventManager.RequestBgmPlay("GameOverTheme");
         EventManager.RequestUIStateChange(UIState.GameOver);
     }

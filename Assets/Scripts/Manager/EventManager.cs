@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +16,7 @@ namespace Assets.Scripts.Manager
         public static event Action OnBgmResumeRequested;
 
         public static event Action<float> OnPlayerHPChanged;
+        public static event Action<int> OnScoreChanged;
 
         public static void RequestUIStateChange(UIState state)
         {
@@ -52,5 +53,9 @@ namespace Assets.Scripts.Manager
             OnPlayerHPChanged?.Invoke(percentage);
         }
 
+        public static void RequestScoreChange(int newScore)
+        {
+            OnScoreChanged?.Invoke(newScore);
+        }
     }
 }

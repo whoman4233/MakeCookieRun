@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Assets.Scripts.Manager;
 
 public class GameOverUI : BaseUI
 {
@@ -25,11 +26,13 @@ public class GameOverUI : BaseUI
 
     public void OnClickRestartBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnClickTotitleBtn()
     {
+        EventManager.RequestSfxPlay("Button");
         SceneManager.LoadScene("TitleScene");
     }
 
