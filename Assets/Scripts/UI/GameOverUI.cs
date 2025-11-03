@@ -26,7 +26,7 @@ public class GameOverUI : BaseUI
 
     public void OnClickRestartBtn()
     {
-        EventManager.RequestSfxPlay("Button");
+        EventManager.RequestSfxPlay("Restart");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

@@ -335,7 +335,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f39f38c8839dda4a90f925d074159d1, type: 3}
     m_FontSize: 30
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 62
@@ -345,7 +345,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bgm
+  m_Text: "\uBC30\uACBD\uC74C"
 --- !u!222 &26795954
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4412,7 +4412,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f39f38c8839dda4a90f925d074159d1, type: 3}
     m_FontSize: 30
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 62
@@ -4422,7 +4422,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Effect
+  m_Text: "\uD6A8\uACFC\uC74C"
 --- !u!222 &946738571
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5053,7 +5053,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Volume Control
+  m_Text: "\uC5B4\uB290 \uC815\uB3C4\uB85C \uC2DC\uB044\uB7FD\uAC8C?"
 --- !u!222 &1169761448
 CanvasRenderer:
   m_ObjectHideFlags: 0
