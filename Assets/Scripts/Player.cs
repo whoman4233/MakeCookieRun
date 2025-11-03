@@ -54,9 +54,11 @@ public class Player : MonoBehaviour
 
         // 땅이면 2단 점프 가능 리셋
         if (isGrounded)
+        {
             playerAnim.SetBool("isGrounded", true);
             canDoubleJump = true;
             playerAnim.SetBool("CanDoubleJump", true);
+        }
     }
 
     public void TryJump()

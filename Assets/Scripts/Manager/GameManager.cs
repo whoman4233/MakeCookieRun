@@ -28,6 +28,46 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private bool isDanger = false;
+    [SerializeField] private float dangerPercentage = 0.3f;
+
+    private bool isGameOver = false;
+
+
+    public int Score;
+
+    [SerializeField] private float initialPlayerHP = 100f;
+    public float PlayerMaxHP { get; private set; }
+    private float _playerHP;    // PlayerHP의 실제 값을 저장할 비공개 변수
+    public float PlayerHP       // 프로퍼티로 변경
+    {
+        get { return _playerHP; }
+        set
+        {
+            _playerHP = Mathf.Clamp(value, 0, PlayerMaxHP);
+
+            float percentage = (PlayerMaxHP >0) ? (_playerHP / PlayerMaxHP) : 0f;
+
+            EventManager.RequestPlayerHPChange(percentage);
+
+            if (PlayerHP <= dangerPercentage && !isDanger)          // BGM 변경 코드 이동
+            {
+                isDanger = true;
+                EventManager.RequestBgmPlay("DangerTheme");
+            }
+            else if (PlayerHP > dangerPercentage && isDanger)       // BGM 변경 코드 이동
+            {
+                isDanger = false;
+                EventManager.RequestBgmPlay("GameTheme");
+            }
+            
+            if (_playerHP <= 0 && !isGameOver)
+            {
+                GameOver();
+            }
+        }
+    }
+
     protected virtual void Awake()
     {
         if (_instance == null)
@@ -41,18 +81,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        PlayerMaxHP = PlayerHP;
+        PlayerMaxHP = initialPlayerHP;
+        PlayerHP = initialPlayerHP;
     }
-
-    private bool isDanger = false;
-    [SerializeField] private float dangerPercentage = 0.3f;
-    
-    public int Score;
-    public float PlayerHP;
-    public float PlayerMaxHP;
-
-    private bool isGameOver = false;
-
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Time.timeScale = 1.0f;
@@ -73,6 +104,7 @@ public class GameManager : MonoBehaviour
         {
             EventManager.RequestBgmPlay("GameTheme");
             EventManager.RequestUIStateChange(UIState.Play);
+            PlayerHP = PlayerMaxHP;
         }
     }
 
@@ -81,17 +113,6 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "GameScene" || isGameOver || Time.timeScale == 0f)
         {
             return;
-        }
-        
-        if (PlayerHP <= dangerPercentage && !isDanger)
-        {
-            isDanger = true;
-            EventManager.RequestBgmPlay("DangerTheme");
-        }
-        else if (PlayerHP > dangerPercentage && isDanger)
-        {
-            isDanger = false;
-            EventManager.RequestBgmPlay("GameTheme");
         }
     }
 

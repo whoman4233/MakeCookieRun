@@ -20,11 +20,13 @@ public class UIManager : MonoBehaviour
     public static UIManager instance { get; private set; }
     
     TitleUI titleUI;
+    SettingUI settingUI;
     CharacterUI characterUI;
     PlayUI playUI;
     PauseUI pauseUI;
     GameOverUI gameOverUI;
-
+    SettingUI settingsUI;
+    
     private Player currentPlayer;
 
     private void Awake()
@@ -36,6 +38,8 @@ public class UIManager : MonoBehaviour
 
             titleUI = GetComponentInChildren<TitleUI>(true);
             titleUI.Init(this);
+            settingUI = GetComponentInChildren<SettingUI>(true);
+            settingUI.Init(this);
             characterUI = GetComponentInChildren<CharacterUI>(true);
             characterUI.Init(this);
             playUI = GetComponentInChildren<PlayUI>(true);
@@ -45,7 +49,8 @@ public class UIManager : MonoBehaviour
             gameOverUI = GetComponentInChildren<GameOverUI>(true);
             gameOverUI.Init(this);
 
-            EventManager.OnUIStateChangeRequested += ChangeState; 
+            EventManager.OnUIStateChangeRequested += ChangeState;
+            EventManager.OnPlayerHPChanged += UpdateHPSlider;
         }
         else
         {
@@ -56,6 +61,7 @@ public class UIManager : MonoBehaviour
     private void OnDisable()
     {
         EventManager.OnUIStateChangeRequested -= ChangeState;
+        EventManager.OnPlayerHPChanged -= UpdateHPSlider;
     }
 
     public void ChangeState(UIState state)
@@ -77,6 +83,26 @@ public class UIManager : MonoBehaviour
             {
                 currentPlayer = null;
             }
+        }
+    }
+
+    public void OpenSettingsPanel()
+    {
+        if (settingUI != null)
+        {
+            settingUI.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("SettingUI가 UIManager에 연결되지 않았습니다.");
+        }
+    }
+
+    public void CloseSettingsPanel()
+    {
+        if (settingUI != null)
+        {
+            settingUI.gameObject.SetActive(false);
         }
     }
 

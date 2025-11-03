@@ -14,14 +14,17 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance {  get; private set; }
 
-    [SerializeField] private AudioSource bgmAudioSource;
-    [SerializeField] private AudioSource sfxAudioSource;
+    public AudioSource bgmAudioSource;
+    public AudioSource sfxAudioSource;
 
     [SerializeField] private Sound[] bgmClips;
     [SerializeField] private Sound[] sfxClips;
 
     private Dictionary<string, AudioClip> bgmDictionary;
     private Dictionary<string , AudioClip> sfxDictionary;
+
+    private const string BGM_VOLUME_KEY = "BgmVolume";
+    private const string SFX_VOLUME_KEY = "SfxVolume";
 
     private void Awake()
     {
@@ -52,6 +55,8 @@ public class SoundManager : MonoBehaviour
         {
             bgmAudioSource.loop = true;
         }
+
+        LoadVolumeSettings();
     }
 
     private void OnEnable()
@@ -127,13 +132,27 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+
     public void SetSfxVolume(float volume)
     {
         sfxAudioSource.volume = volume;
+        PlayerPrefs.SetFloat(SFX_VOLUME_KEY, volume);
     }
 
     public void SetBgmVolume(float volume)
     {
         bgmAudioSource.volume = volume;
+        PlayerPrefs.SetFloat(BGM_VOLUME_KEY, volume);
     }
+
+    private void LoadVolumeSettings()
+    {
+        float bgmVolume = PlayerPrefs.GetFloat(BGM_VOLUME_KEY, 1.0f);
+        float sfxVolume = PlayerPrefs.GetFloat(SFX_VOLUME_KEY, 1.0f);
+
+        SetBgmVolume(bgmVolume);
+        SetSfxVolume(sfxVolume);
+    }
+
+
 }
