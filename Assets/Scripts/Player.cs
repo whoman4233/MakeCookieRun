@@ -55,6 +55,29 @@ public class Player : MonoBehaviour
         playerAnim = GetComponentInChildren<Animator>();
     }
 
+    void Update() // 키보드로도 입력 가능하도록 Update에 추가
+    {
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space))
+        {
+            TryJump(); // 기존 점프 메서드 호출
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            BeginSlide(); // 기존 슬라이드 시작 메서드 호출
+        }
+
+        if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            EndSlide(); // 기존 슬라이드 종료 메서드 호출
+        }
+    }
+
     void FixedUpdate()
     {
         // 항상 앞으로 이동
