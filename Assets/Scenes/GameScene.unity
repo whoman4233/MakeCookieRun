@@ -1446,8 +1446,8 @@ MonoBehaviour:
   initialItemSpawnStartX: 10
   spawnYRange: 1
   obstaclePadding: 0.5
-  spawnRepeatCycle: 1
-  spawnPercent: 0.6
+  spawnRepeatCycle: 0.5
+  spawnPercent: 0.9
   playerTransform: {fileID: 0}
   offset: {x: 20, y: 0, z: 0}
   checkRadius: 0.5

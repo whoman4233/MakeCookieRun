@@ -15,12 +15,12 @@ public class ItemSpawner : MonoBehaviour
     [Header("Spawn Settings")]
     // [SerializeField] private float minSpawnInterval = 3f;
     // [SerializeField] private float maxSpawnInterval = 7f;
-    [SerializeField] private float spawnYRange = 3f;            // 중심 기준 위아래 랜덤 범위
+    [SerializeField] private float spawnYRange = 1f;            // 중심 기준 위아래 랜덤 범위
     // [SerializeField] private float spawnXPaddingMin = 3f;
     // [SerializeField] private float spawnXPaddingMax = 3f;
     [SerializeField] private float obstaclePadding = 0.5f; 
     [SerializeField] private float spawnRepeatCycle = 0.5f;// Obstacle과의 간격
-    [SerializeField] private float spawnPercent = 0.6f;
+    [SerializeField] private float spawnPercent = 0.9f;
     
     [Header("Follow Player")]
     [SerializeField] private Transform playerTransform;
