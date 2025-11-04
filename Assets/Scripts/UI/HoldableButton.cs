@@ -4,9 +4,9 @@ using UnityEngine.EventSystems;
 
 public class HoldableButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [Header("ÀÌº¥Æ® ¼³Á¤")]
-    public UnityEvent onPress;     // ´©¸¦ ¶§ ½ÇÇà
-    public UnityEvent onRelease;   // ¶¿ ¶§ ½ÇÇà
+    [Header("ì´ë²¤íŠ¸ ì„¤ì •")]
+    public UnityEvent onPress;     // ëˆ„ë¥¼ ë•Œ ì‹¤í–‰
+    public UnityEvent onRelease;   // ë—„ ë•Œ ì‹¤í–‰
 
     public void OnPointerDown(PointerEventData eventData)
     {

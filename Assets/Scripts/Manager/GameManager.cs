@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         set
         {
             _score = value;
-            // 값이 변경될 때마다 EventManager에 신호를 보냅니다.
+            // 값이 변경될 때마다 EventManager에 신호.
             EventManager.RequestScoreChange(_score);
         }
     }

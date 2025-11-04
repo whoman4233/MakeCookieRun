@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class BgLooper : MonoBehaviour
 {
-    public Camera cam;                     // µû¶ó°¥ Ä«¸Ş¶ó (¾øÀ¸¸é Start¿¡¼­ MainCamera·Î)
-    public SpriteRenderer tile1, tile2;    // °°Àº ÆøÀÇ ¹è°æ Å¸ÀÏ 2Àå
+    public Camera cam;                     // ë”°ë¼ê°ˆ ì¹´ë©”ë¼ (ì—†ìœ¼ë©´ Startì—ì„œ MainCameraë¡œ)
+    public SpriteRenderer tile1, tile2;    // ê°™ì€ í­ì˜ ë°°ê²½ íƒ€ì¼ 2ì¥
     [Range(0f, 1.5f)]
-    public float parallax = 1f;            // 1=Ä«¸Ş¶ó¿Í µ¿ÀÏ ¼Óµµ(Áö¸é), 0.3~0.6=¿ø°æ
+    public float parallax = 1f;            // 1=ì¹´ë©”ë¼ì™€ ë™ì¼ ì†ë„(ì§€ë©´), 0.3~0.6=ì›ê²½
 
-    float width;          // Å¸ÀÏ Æø (½ºÄÉÀÏ/PPU ¹İ¿µ)
-    float halfViewW;      // Ä«¸Ş¶ó ¹İÂÊ °¡·ÎÆø
-    float lastCamX;       // Á÷Àü Ä«¸Ş¶ó X
+    float width;          // íƒ€ì¼ í­ (ìŠ¤ì¼€ì¼/PPU ë°˜ì˜)
+    float halfViewW;      // ì¹´ë©”ë¼ ë°˜ìª½ ê°€ë¡œí­
+    float lastCamX;       // ì§ì „ ì¹´ë©”ë¼ X
     Transform t1, t2;
 
     void Start()
@@ -20,11 +20,11 @@ public class BgLooper : MonoBehaviour
         t1 = tile1.transform;
         t2 = tile2.transform;
 
-        // Å¸ÀÏ Æø(½ºÄÉÀÏ±îÁö ¹İ¿µ) + Ä«¸Ş¶ó °¡·Î ¹İÆø
+        // íƒ€ì¼ í­(ìŠ¤ì¼€ì¼ê¹Œì§€ ë°˜ì˜) + ì¹´ë©”ë¼ ê°€ë¡œ ë°˜í­
         width = tile1.bounds.size.x;
         halfViewW = cam.orthographicSize * cam.aspect;
 
-        // ½ÃÀÛ ½Ã BG2¸¦ BG1 ¿À¸¥ÂÊ¿¡ Á¤È®È÷ ºÙÀÓ(ÃÊ±â ¿ÀÂ÷ Á¦°Å)
+        // ì‹œì‘ ì‹œ BG2ë¥¼ BG1 ì˜¤ë¥¸ìª½ì— ì •í™•íˆ ë¶™ì„(ì´ˆê¸° ì˜¤ì°¨ ì œê±°)
         t2.position = new Vector3(t1.position.x + width, t1.position.y, t1.position.z);
 
         lastCamX = cam.transform.position.x;
@@ -35,7 +35,7 @@ public class BgLooper : MonoBehaviour
         float camX = cam.transform.position.x;
         float dxCam = camX - lastCamX;
 
-        // 1) ¹è°æÀ» 'Ä«¸Ş¶ó ÀÌµ¿·® * ÆÄ¶ó¶ö·¢½º' ¸¸Å­ ÀÌµ¿
+        // 1) ë°°ê²½ì„ 'ì¹´ë©”ë¼ ì´ë™ëŸ‰ * íŒŒë¼ë„ë™ìŠ¤' ë§Œí¼ ì´ë™
         if (dxCam != 0f)
         {
             Vector3 move = new Vector3(dxCam * parallax, 0f, 0f);
@@ -44,10 +44,10 @@ public class BgLooper : MonoBehaviour
             lastCamX = camX;
         }
 
-        // 2) Ä«¸Ş¶ó ¿ŞÂÊ È­¸é ¹Û(Å¸ÀÏ Áß½É ±âÁØ ¹İÆø Æ÷ÇÔ)À¸·Î ¿ÏÀüÈ÷ ¹ş¾î³­ Å¸ÀÏ¸¸ ¿À¸¥ÂÊ ³¡ µÚ·Î ºÙÀÓ
+        // 2) ì¹´ë©”ë¼ ì™¼ìª½ í™”ë©´ ë°–(íƒ€ì¼ ì¤‘ì‹¬ ê¸°ì¤€ ë°˜í­ í¬í•¨)ìœ¼ë¡œ ì™„ì „íˆ ë²—ì–´ë‚œ íƒ€ì¼ë§Œ ì˜¤ë¥¸ìª½ ë ë’¤ë¡œ ë¶™ì„
         float leftEdge = camX - halfViewW - (width * 0.5f);
 
-        // ´õ ¿ŞÂÊ¿¡ ÀÖ´Â Å¸ÀÏºÎÅÍ Ã³¸®(¿©·¯ ÀåÀÌ ÇÑ ¹ø¿¡ ³Ñ¾î°¡µµ ¾ÈÀü)
+        // ë” ì™¼ìª½ì— ìˆëŠ” íƒ€ì¼ë¶€í„° ì²˜ë¦¬(ì—¬ëŸ¬ ì¥ì´ í•œ ë²ˆì— ë„˜ì–´ê°€ë„ ì•ˆì „)
         if (t1.position.x <= t2.position.x)
         {
             if (t1.position.x < leftEdge)

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Assets.Scripts.Manager;
 
-public enum UIState
+public enum UIState // UI 상태를 정의하기 위한 열거형
 {
     Title,
     Character,
@@ -25,7 +25,6 @@ public class UIManager : MonoBehaviour
     PlayUI playUI;
     PauseUI pauseUI;
     GameOverUI gameOverUI;
-    SettingUI settingsUI;
     
     private Player currentPlayer;
 
