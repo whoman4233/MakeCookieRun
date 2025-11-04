@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour
         }
         else if (sceneName == "GameScene")
         {
+            EventManager.RequestBgmStop();
             EventManager.RequestBgmPlay("GameTheme");
             EventManager.RequestUIStateChange(UIState.Play);
             PlayerHP = PlayerMaxHP;
