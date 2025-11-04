@@ -6,12 +6,15 @@ public class MapManager : MonoBehaviour
 {
     [SerializeField] private ObstaclePool obstaclePool;
     [SerializeField] private TextAsset patternJsonFile; // JSON 파일
+    [SerializeField] private Player player;
     
     private ObstaclePatternData patternData;
     private float lastSpawnX = 5f;
     private float patternPadding; // 패턴 간 간격
-    [SerializeField] private float patternPaddingMin = 3f;
-    [SerializeField] private float patternPaddingMax = 7f;
+    private float patternPaddingMin = 5f;
+    private float patternPaddingMax = 7f;
+    [SerializeField] private float currentPatternPaddingMin = 5f;
+    [SerializeField] private float currentPatternPaddingMax = 10f;
     
     [Header("Obstacle Y Location")]
     [SerializeField] private float topObstacleY = 3f;    // 위에서 아래 Y 위치
@@ -21,6 +24,8 @@ public class MapManager : MonoBehaviour
     private int topPatternCount = 0;
     private int bottomPatternCount = 0;
     private int patternCountMax = 3;
+
+    private int spawnSpeed;
     
     private void Start()    
     {
@@ -55,9 +60,11 @@ public class MapManager : MonoBehaviour
     {
         while (true)
         {
-            // ✅ 먼저 대기하지 말고 바로 생성
+            float speedRatio = player.forwardSpeed / player.maxSpeed;
+            float spawnInterval = Mathf.Lerp(2f, 1f, Mathf.Pow(speedRatio, 2f));
+
             SpawnRandomPattern();
-            yield return new WaitForSeconds(2f); // 생성 후 2초 대기
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
     
@@ -77,7 +84,12 @@ public class MapManager : MonoBehaviour
     // 패턴 생성
     private void SpawnPattern(ObstaclePattern pattern)
     {
-        patternPadding = Random.Range(patternPaddingMin, patternPaddingMax); 
+        float speedRatio = Mathf.Clamp01(player.forwardSpeed / player.maxSpeed);
+        
+        currentPatternPaddingMin = patternPaddingMin + 15f * speedRatio;
+        currentPatternPaddingMax = patternPaddingMax + 15f * speedRatio;
+        
+        patternPadding = Random.Range(currentPatternPaddingMin, currentPatternPaddingMax); 
         float currentX = lastSpawnX + patternPadding;
         
         foreach (ObstacleType type in pattern.obstacles)

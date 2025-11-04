@@ -513,6 +513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2053d6b0b3b1245926c48b6aa1bc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedIncreaseRate: 0.1
+  maxSpeed: 20
   forwardSpeed: 9
   jumpForce: 13
   doubleJumpForce: 13
@@ -700,8 +702,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePool: {fileID: 1958846569}
   patternJsonFile: {fileID: 4900000, guid: ac4286c4adacb432b9b66fed4c1020db, type: 3}
-  patternPaddingMin: 7
-  patternPaddingMax: 13
+  player: {fileID: 821166582}
+  currentPatternPaddingMin: 5
+  currentPatternPaddingMax: 10
   topObstacleY: 2.45
   bottomObstacleY: -3.12
   doubleObstacleY: -1.95
@@ -1444,6 +1447,7 @@ MonoBehaviour:
   spawnYRange: 1
   obstaclePadding: 0.5
   spawnRepeatCycle: 1
+  spawnPercent: 0.6
   playerTransform: {fileID: 0}
   offset: {x: 20, y: 0, z: 0}
   checkRadius: 0.5
